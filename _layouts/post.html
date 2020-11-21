@@ -1,0 +1,45 @@
+{%- include pretty-numbers.html -%}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  {%- include head-matter.html -%}
+</head>
+<body>
+
+{%- include site-nav.html -%}
+
+<main id="main">
+<article>
+
+<header>
+	<h1 class="post-title">{%- if page.nowPage -%}{{ site.categories.now[0].title }}{%- else -%}{{ page.title }}{%- endif -%}</h1>
+	<p class="name-and-date">
+	<!--<a href="/" title="Derek Kedziora" rel="author" class="author-link">Derek Kedziora</a>-->
+	<time datetime="{{ postDate | date: '%Y-%m-%d' }}">{{ postDate | date: "%B" }} {{prettyDateOfPost}}{{ ordinalEnding }}, {{ postDate | date: "%Y" }}</time></p>
+</header>
+
+{%- if page.categories contains "english-guide" -%}
+	{%- include english_plug.html -%}
+{%- endif -%}
+
+{%- if page.categories contains "rss-club" -%}
+	{%- include rss-plug.html -%}
+{%- endif -%}
+
+{{ content }}
+
+{%- if page.tags[0] -%}
+	{%- include tagged.html -%}
+{%- elsif page.categories contains "now" -%}
+	<aside class="post-tagged"><p><a href="/now">Go to the latest now update</a></p></aside>
+{%- endif -%}
+
+</article>
+</main>
+
+{%- include footer.html -%}
+
+</body>
+
+</html>

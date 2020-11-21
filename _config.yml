@@ -1,0 +1,54 @@
+title: "Derek Kedziora" 
+author: Derek Kedziora
+email: "hello@derekkedziora.com"
+description: "Derek Kedziora's person site"
+github: derekkedziora
+highlighter: rouge
+markdown: kramdown
+parse_block_html: false
+url: https://derekkedziora.com
+permalink: blog/:title
+show_drafts: true
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      blogpost: true
+      layout: post
+    
+  -    
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+  -    
+    scope:
+      path: ""
+      type: "no-index"
+    values:
+      layout: page
+      no-index: true
+
+collections:
+  pages:
+    output: true
+  no-index:
+    output: true
+
+plugins:
+  - jekyll-feed
+
+feed: 
+  categories: 
+    - english-guide
+    - now
