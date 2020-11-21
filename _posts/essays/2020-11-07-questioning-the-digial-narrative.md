@@ -49,7 +49,7 @@ So the digital enriches itself with little discernible effect on the outside wor
 
 ## Recycling Fake News
 
-Big businesses are adept at passing the blame along when their products are toxic. [Recycling was a crock](https://www.youtube.com/watch?v=-dk3NOEgX7o)by oil companies to transfer blame to consumers. The hysteria over fake news is the same genre. 
+Big businesses are adept at passing the blame along when their products are toxic. [Recycling was a crock](https://www.youtube.com/watch?v=-dk3NOEgX7o) by oil companies to transfer blame to consumers. The hysteria over fake news is the same genre. 
 
 Fake news, conspiracy theories, anti-vaxers, dog whistles and toxic echo chambers are profitable for Google and Facebook. These types pay to promote their posts, buy ads and otherwise drive engagement. Patronizing messages nagging individual users not to share unverified election data aren't a good faith effort to solve the problem.  
 
