@@ -14,12 +14,27 @@ I'm constantly tweaking and changing things here. In the spirit of an open redes
 
 ## Change Log 
 
-**2020.11.21** Changed from master to main branch in GitHub. Made minor changes to the style of the nav bar on each page.
+### 2020.11
 
-**2020.10.31** Added a top bar navigation (Jakob's law and accessibility over asthetics). I also simplified the overall navigation to only 3 top level pages and each subsequent page is within two clicks of the homepage.
+- Added new images and captions to the about page. Now one image is randomly selected on each page load. 
 
-**2020.10.25** Contact page merged with about page to help simplify site navigation.
+### 2020.11.21
 
-**2020.10.20** Alphabetized the tag page, removed blogroll page.
+- Changed from master to main branch in GitHub.
+- Made minor changes to the style of the nav bar on each page.
 
-**2020.10.12** Created the change log page and updated the site map accordingly. 
+### 2020.10.31
+
+Added a top bar navigation (Jakob's law and accessibility over asthetics). I also simplified the overall navigation to only 3 top level pages and each subsequent page is within two clicks of the homepage.
+
+### 2020.10.25
+
+Contact page merged with about page to help simplify site navigation.
+
+### 2020.10.20
+
+Alphabetized the tag page, removed blogroll page.
+
+### 2020.10.12 
+
+Created the change log page and updated the site map accordingly. 

@@ -365,3 +365,8 @@ nav a {
   text-decoration-color: var(--extra-light-text-color);
 }
 
+.about-picture {
+  float: right; 
+  margin: 0 0 5% 5%; 
+  width: clamp(25%, 50%, 450px);
+} 
