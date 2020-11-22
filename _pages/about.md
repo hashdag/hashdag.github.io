@@ -8,7 +8,10 @@ nav: about
 
 I'm a writer in tech. Everything from content strategy, UX writing, copywriting and documentation&thinsp;—&thinsp;I've done it. In a past life I was English teacher. 
 
-<img src="https://lh3.googleusercontent.com/CZMeWxxlQ6gHJEYMPYGGmlmTXrANKRHggISoKwhSg-xXrUDl23ea-Whsl9UP1QNi4yTHnusrlvPcbLEIEdJXAceKu4RBWG55PdXepmhlDrsVwGAYauRke5S5n-0JZNvtW2ceVLcGWgdNpr1ZfIHFr6BIcrkdCN7lv2F3Im_i1vCKDpdMh5WSicfwMaVr2LzwMADwzYc5IUB_TetXxMpFKetfPhRYJfaPfSIfo4ML49_40HYVdRxZiF2VCLH9hyLi4PKOY9P7CXndX3_2En1KhY2y8kdy_M2bZ69BI726Znot1XezHZjKhDNpvY0yTQ-uBbOXw1M7Exx5etM2OfaSDYtqtBccwIZWAWQkSIxiaVBhc80D2e1tVkGK48CYCyWSZ4ZeiCEF0lmsRV76hR-_knQ6_p0vQ9-oVOZQO7tvbDZNP-2Oc_-IhPU5ZIW8bFTcZPf4rZyOtDAn2qiXZefFUu6mQXt9xQEAW8Sl08gv140Xk3neygGL_AKOYmLC7OhuBH_I1XkKEI746ciHH86OuqvdCAHGIWLHwhmKgGRbce6zhgxotCJsC6olkG7oqKRQTxAzA4XLPzw0bxR30kBS2Lrv2KAFYbbzdbo30j0-tWoMwWA0A29D_z8ebsnHs9LY7YCYd7KBNDwjZzIU4gRd10exF5zuZob-L96GWc8p3JWHlAp_lCBgpWSV-0v7tthYAMq3fREZYsk82NabIrrSxbKx8EbH23_0oklV3-NKSEROdBI5csYDK9D9=w590-h422-no?authuser=0" alt="The author at a cafe" title="Derek Kedziora" loading="lazy" style="float: right; padding-left: 5%; max-width: 50%;">
+<img alt="" title="Derek Kedziora" id="aboutImg" style="float: right; padding-left: 5%; max-width: 175px;">
+<noscript>
+	<img src="https://lh3.googleusercontent.com/HAmfKhDjoR0_ERjIZx_o26sELzAC_E2eoLDW5krAKOgnq9C_CCGTaAzhr1xzXb4wexaIFb8hscrX1jwyiqGQtaIm8xgGEiLYYTl1KiGvt6nxm-53ke16sx_2BJtxctgDPBMR0lTgACsneH_hiGYjlOgoJU9i5VmkW-izr2-E01sAqXpbXejM4LkOya-U6ix9uwjFwuiCebDP4mHDH6por52FFqcvNvlCzKNySMf0WQIp-v-GGH9dTFwiWTKvzKk9bXBiGNjwA547jyyPf0TUt9Y4a85i_-Kt3OHBxY31PIMemeuAEY3yujCfdCaApSK48SVBB9ejX9_KhXIKP21mVIEIfOmJSeu8eAHobFZnjMUUfgjPoDL05QhDj9AZQIa-8fo4RFVq0cvGCYv8oKONczZ4LKZ0VAHRHW3F5Rjl9LhApNAnrNvRfbI2pGUjtMlLrMfzMJ2fIMj3mbcqNabp2mgspJ90wETqVMASGTPLNGT2UYGXC_fELk6daf9GIQMGEWlVZHBgn6mNR_7FaTiRF3ottLpNcpaOqDjzyx3DchBllUw33rTldwv2aVm26oOQeEPUh4Yj7JnqGUU3NVNU4uatrzU-wujdRAE9KvJ6rOvDiurIRnvtfRDEmeueRVSHsETaQlrp3Dc7hHKBEmpOGdFf4sqJ_xSDpeqSxK1WR8bKloVF0i4VltnKngpUpCmBB5quqavTu6Q-kIUaL7B1coy4e4_Vx59NwctBoXnF5akG9nSZw1xUBRQi=w587-h795-no?authuser=0" alt="" title="Derek Kedziora" style="float: right; padding-left: 5%; max-width: 175px;">
+</noscript>
 
 I grew up in Phoenix, Arizona but have spent most of my adult life in Kyiv, Ukraine (long story). Along the way I've lived in Kyrgyzstan, China and Saudi Arabia (even longer story). 
 
@@ -33,3 +36,5 @@ View the [source code on GitHub](https://github.com/derekkedziora/derekkedziora.
 My goals are speed, simplicity and longevity. Thus, my site is static HTML, CSS and a few JavaScript enhancements. [It's designed to last](https://jeffhuang.com/designed_to_last/).
 
 Matthew Butterick's [Practical Typography](https://practicaltypography.com) has heavily influence how I designed my site. 
+
+<script src="/static/aboutImgChanger.js"></script>
