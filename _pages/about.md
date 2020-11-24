@@ -6,5 +6,5 @@ permalink: /about
 nav: none
 --- 
 
-This is the original "About Me" page on Derek's blog. Instead, we can link this to your personal site at HUJI.
+My name is Yonatan Sompolinsky, a.k.a. @hashdag.
 
