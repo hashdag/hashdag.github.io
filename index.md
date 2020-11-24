@@ -1,15 +1,11 @@
 ---
-title: "Hey, I’m Derek&nbsp;🖖"
+title: "Yonatan Sompolinsky's Blog"
 og-type: website
 layout: index
 nav: main
 ---
 
-I'm a content designer and UX writer based in Kyiv, Ukraine. 
+Blog description here.
 
-My site is an ongoing experiment in small scale blogging. Besides the tech industry, I write about books, philosophy, language or whatever's on my mind.
-
-Want to see my work? Check out my [portfolio](/portfolio).
-
-Learning English? Head over to my [English guides](/english).
+Optional links to other pages.
 

@@ -1,12 +1,12 @@
-title: "Derek Kedziora" 
-author: Derek Kedziora
-email: "hello@derekkedziora.com"
-description: "Derek Kedziora's person site"
-github: derekkedziora
+title: "Yonatan Sompolinsky's Blog" 
+author: Yonatan Sompolinsky
+email: "yonatan.sompolinsky@gmail.com"
+description: "Yonatan Sompolinsky's Blog"
+github: hashdag
 highlighter: rouge
 markdown: kramdown
 parse_block_html: false
-url: https://derekkedziora.com
+url: https://hashdag.github.io/
 permalink: blog/:title
 show_drafts: true
 defaults:
