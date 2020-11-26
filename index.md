@@ -5,4 +5,4 @@ layout: index
 nav: main
 ---
 
-Core member of Kaspa community, blogging about Kaspa and crypto in general.
+Early member of Kaspa community, this is my attempt at crypto-blogging
