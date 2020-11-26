@@ -1,8 +1,8 @@
 ---
-title: "Hashdag's Blog"
+title: "Block Liveness Matters"
 og-type: website
 layout: index
 nav: main
 ---
 
-Early member of Kaspa community, this is my attempt at crypto-blogging
+I'm an early member of Kaspa community, been spending the last 8 years on crypto R&D. This is my first attempt at blogging, primarily on crypto, tech, and the West 
