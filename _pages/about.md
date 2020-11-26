@@ -6,5 +6,6 @@ permalink: /about
 nav: none
 --- 
 
-My name is Yonatan Sompolinsky, a.k.a. @hashdag.
+I'm an early member of Kaspa community, been spending the last 8 years on crypto R&D. This is my first attempt at blogging, primarily on crypto, tech, and the West
+
 
