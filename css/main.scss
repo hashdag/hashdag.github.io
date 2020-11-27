@@ -24,7 +24,7 @@ html {
   --underline-color: hsl(0, 0%, 50%);
 }
 
-@media (prefers-color-scheme: dark) {
+/** @media (prefers-color-scheme: dark) {
   html {
     --box-background-color: hsl(0, 0%, 20%);
     --extra-light-text-color: hsl(0, 0%, 55%);
@@ -41,7 +41,7 @@ html {
   img {
     filter: brightness(.75) contrast(1.2);
   }
-}
+} **/
 
 html {
   background-color: var(--main-background-color);
