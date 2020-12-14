@@ -5,4 +5,4 @@ layout: index
 nav: main
 ---
 
-A blog on crypto, tech, and the West 
+A blog on crypto, tech, and the West. 
