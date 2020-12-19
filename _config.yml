@@ -9,6 +9,10 @@ parse_block_html: false
 url: https://hashdag.github.io/
 permalink: blog/:title
 show_drafts: true
+
+# Google Analytics
+google_analytics: UA-185675968-1
+
 defaults:
   -
     scope:
