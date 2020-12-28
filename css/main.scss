@@ -209,8 +209,16 @@ p code {
   background-color: var(--box-background-color);
 }
 
-img {
+figure {
+  display: block;
+}
+
+.inline-block {
   display: inline-block;
+}
+
+img {
+  display: block;
   height: auto;
   margin: 0 auto;
   max-width: 100%;
