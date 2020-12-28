@@ -149,6 +149,9 @@ footer {
 p + *, ul + *, ol + *, blockquote + *, figure + * {
   margin: var(--line-height) 0 0 0;
 }
+figure {
+  display: inline-block;
+}
 
 h2, h3 {
   font-family: $heading-typeface;
