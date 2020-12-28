@@ -149,9 +149,6 @@ footer {
 p + *, ul + *, ol + *, blockquote + *, figure + * {
   margin: var(--line-height) 0 0 0;
 }
-figure {
-  display: inline-block;
-}
 
 h2, h3 {
   font-family: $heading-typeface;
@@ -213,7 +210,7 @@ p code {
 }
 
 img {
-  display: block;
+  display: inline-block;
   height: auto;
   margin: 0 auto;
   max-width: 100%;
