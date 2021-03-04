@@ -11,46 +11,63 @@ Sure, Ethereum is great and all, but why? What exactly made it into this vibrant
 
 Ethereum’s success is commonly ascribed to its *composability*, the ability to compose one smart contract on top of another like lego boxes, leaving little-to-no need for development coordination, as once a dev team deployed a smart contract, any other smart contract can access it, permissionlessly. However, while Ethereum does harvest the power of openness and permissionlessness to reuse, extend, and compose different code bases and code components -- this is by no means new or unique, it characterizes general open source values and structure. Almost by definition, open source allows one to build software composed of several code bases and libraries developed by others. So *shared functionality*, or composability of functionalities, isn’t precising the matter.
 
-### Community launch
+### Composability - everyone’s talking about it
 
-In contrast, Kaspa is a “community launch” coin.
+The composability everyone’s referring to is, I suppose, the ability to compose different functionalities while acting *on and inside the same state*. Ethereum combines open source shared functionality with Nakamoto Consensus to enable *shared alterable state*.
 
-<figure><img src="/static/communitylaunch.png" loading="lazy" />
+Without this shared state, the DeFi movement is reduced to a rising demand for using financial products that offer permissionless access to open APIs which communicate over a shared network (otherwise known as: the internet). If it was just transparent finance and open APIs, users wouldn’t be able to issue transactions that access several dapps or financial products simultaneously in a manner whose consequences are predictable and pre-understood. Rather, they would need to transact separately with each dapp, and while these interactions could be automated, the cascade of events across these composable contracts wouldn’t be predictable.
+
+And Ethereum is a game changer for DeFi precisely because it enables predictable cascading transactions, transactions of the form “Alice locks Token Ali and Token Baba in the autonomous contract Compos, Compos increases its pool of Token Ali and Baba, their respective exchange rates adjust, and Alice is added to the list of shareholders benefiting from fees collected by Compos” -- all these assertions necessarily happening together (or together not happening). This property is known as *atomicity*, namely, the guarantee that a set of events and consequences will happen or not happen together. Let your imagination be carried with these endless composability options and you’re on the right track to becoming a DeFi dev.
+
+Of course, transparent and permissionless finance is still an improvement over traditional finance, but these do not capture Ethereum’s ecosystem and the flywheel responsible for growing its network effect.
+
+### Ethereum’s CAP
+
+In this section I want to illustrate and emphasize that *composability + shared state = synchronous composability*. Indeed, acting on a shared consensus state effectively requires that each transaction at its turn locks the state, *fully executes*, and completes its full update of the state, as in the Alice and Compos example above.
+
+
+<figure><img src="/static/asynccompose.png" loading="lazy" />
 </figure>
 
+To press this point further, and to start unfolding Ethereum’s roadmap, imagine an Ethereum variant where synchronous composability is violated; as we will see, unfortunately this thought experiment is not hypothetical, and there are good chances Ethereum is going down this road. We’ll come back to this shortly. Concretely, imagine that smart contracts wouldn’t communicate synchronously. That is, smart contracts would still be composable in the sense that they automatically interact with each other and trigger mutual function calls, but these function calls do not happen at the same transaction or block, rather, in this for-now-hypothetical Ethereum, it’d a few hours or days for one contract to consider and update upon messages sent by other contracts.
 
-The goal is that early members would (1) be able to secure themselves allocation of Kaspa, with some degree of certainty, and (2) enjoy a low inflation rate on their holdings. A mechanism to achieve this would need to (a) let the market price the opportunity (rather than, e.g., the core devs price it), (b) tune the inflation parameters in accordance with the “size” of the community as represented by some verifiable quantity. That is, the larger the community gathering around the coin, the lower inflation rate you want this community to suffer from, which translates to a steeper inflation curve.[^2]
+It is highly questionable that such a system would be an impactful dapp platform as Ethereum has become. Among other difficulties, one obvious one is the great degree of unpredictability and indeterminism in the hours/days delayed execution of the transaction -- the violation of synchronous composability is a violation of atomicity and in turn of predictability: The consequence of the cascade of events triggered by a transaction would be prohibitively unpredictable.
 
-Since the protocol itself is faceless and organization-less, the mechanism will be deployed outside the protocol, by DAGlabs, as the largest miner on day one, on a best effort basis, and entailing still a large degree of uncertainty.
+While Ethereum users already suffer from some degree of uncertainty regarding the outcome of their transactions -- a caveat inherent to acting inside a shared asynchronous environment -- delaying parts of the execution for hours, let alone days, would make it rarely useful to issue rich composite transactions.
 
-### Initial Hashrate Offering
+Following these observations, and returning to Ethereum’s original shared state principle, 
+we may conclude that Ethereum’s main value proposition is not mere composability, rather, synchronous composability, i.e., the ability to compose different functionalities while acting on and inside the same state.
 
-DAGlabs will oversee a pre-launch customization of ASICs that will support a hash function specific to Kaspa, providing a head start on mining. These machines will dominate the market for an unknown period until other players decide to enter. The value of these machines must be distributed across early contributors, investors, the community, and a future development fund in some form of ASIC presale. The benefits of an “ASIC presale” model are described thoroughly in Nic Carter’s post, [In support of the proof of work \[un\]fair launch](https://medium.com/@nic__carter/in-support-of-the-proof-of-work-un-fair-launch-cd6e8f06358f). TL;DR: Kaspa will have good and well-understood PoW security from the start, the regulatory risk normally surrounding token presales is reduced, and early adopters are rewarded and development is monetized at a limited capacity, among other benefits.
+So far so good, we can summarize Ethereum as satisfying CAP: Composability, Atomicity, Predictability. (The *CAP theorem* is anyways lame and should be abused in good conscience.)
 
-Unfortunately, and diverging from Carter’s ideal, it is impractical for DAGlabs to support a logistical pipeline of physical distribution and shipment of machines, due to several factors: (i) it would be too expensive and cause logistic havoc, (ii) there is not enough demand for pre-sold ASICs—average miners wouldn’t acquire machines that can only mine a coin that does not yet exist,[^3] and (iii) the ASICs are not particularly friendly to home users, so even folks with a few GPUs—who would normally be a good audience for an ASIC presale—would find it slightly more challenging to operate an ASIC.
+### The bad news
+
+But shared state is inherently unscalable, as every individual transaction imposes externality costs on the entire network. This is the why and what of *sharding* -- splitting the state across different zones so that a transaction imposes a computational burden on the validators of its shard only.
+
+Almost any proposed roadmap for scaling Ethereum contains, in one way or another, sharding. While sharding is connotated with the Eth 2.0 vision, the updated [rollups-vision for scaling Ethereum](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698) will silo the state across different rollups. (I use *siloing* to describe spontaneous grouping of smart contracts and validators, to distinguish it from random uniform allocation of validators, as in classical sharding.)
+
+The by-design independence of a rollup (or shard) implies that its state can depend on events of another rollup only after the latter’s state reached finality. From rollup Y’s perspective, we replace the question “Is the state of rollup X correct?” with “Is the state of rollup X finalized”, which is sufficient for rollup Y and the system as a whole to operate and cooperate (users of rollup Y do not care, at least in the micro level, if the state of rollup X was corrupted).
+
+This means that transactions that touch a few smart contracts, across different rollups, will need to wait for a long time before they are fully executed -- if Alice’s tokens are managed in rollup X, and Compos is managed in rollup Y, the execution of Alice’s transaction will begin in rollup X, then wait for its finality, and only then complete inside rollup Y.
  
-Thus, DAGlabs’ main efforts would be (\*) distributing the mining machines both geographically and politically, and (\*\*) facilitating economic participation of the community in mining, namely, creating a financial vehicle for early community members to be invested in the coins mined by the machines. Later efforts would include (\*\*\*) further distributing the full nodes that control the mining process, enabling community members to run the software that dictates the block templates to be mined, and (\*\*\*\*) creating a thin logistical pipeline to sell machines to interested parties and enthusiasts. 
+We reached the crux of rollup-centric Ethereum’s composability problem:
 
-### No free launch
+*The finality delay of the underlying sharding system dictates the degree of asynchrony, and with it the degree of unpredictability of transaction execution.*
 
-Before mainnet launch, a DeFi contract will auction out the right to future Kaspa coins. Interested community members will lock some coins (say, ETH) on said DeFi contract and receive Kaspa at a future date. These Kaspa would originate from the machines operated by DAGlabs. The coins will flow to the contract, and in exchange the contract will release the locked ETH and send them to DAGlabs. The money will (1) repay DAGlabs for the capital expenses of the ASICs, (2) fund the operational expenses of these ASICs, and (3) be saved for future development.
+If we had finality periods of 2 seconds, as in Cosmos’ utilization of tendermint (which is not for free, stronger assumptions are made), you can argue that maybe async composability is useful. But with optimistic-rollups, the finality is said to be hours or days long, maybe even weeks. This renders async composability useless for an optimistic-rollups-centric Ethereum.[^1]
 
-Importantly, in case DAGlabs does not flow Kaspa in a relevant timeframe (for whatever reason), the contract would automatically unlock the ETH and return them to the participants; thus, even in the worst case, a participant will not pay without receiving the promised Kaspa. To discourage DAGlabs from maliciously keeping Kaspa instead of flowing it to the DeFi contract, there will be an off-chain tool that continuously demonstrates the hashrate of the ASICs, providing transparency around mining. 
+Folks have proposed to circumvent the finality delay using cross-rollup liquidity providers (LPs). The solution is designed for fungible assets only, and it operates as follows:
+1. Alice wishes to withdraw her funds from rollup X and transfer them to rollup Y (or to a base layer).
+2. Alice contacts an LP that has sufficient funds in the relevant fungible token, on both rollups. 
+3. Alice sends her token to LP, on rollup X.
+4. LP sends Alice the same amount of the corresponding token (minus a commission), on rollup Y. 
 
-Parties that participated in this contract-based ASIC pre-sale and are interested in owning and holding the ASICs physically should contact DAGlabs to arrange this; DAGlabs won't be able to cover the shipping cost. 
-
-Finally, as argued above, participation in the pre-sale importantly determines the size of the early community and the timeline of community growth, which in turn should determine the aggressiveness of the minting curve, or the disinflation rate. The larger the size of the early community (i.e., higher participation in the DeFi contract), the more aggressive we can and need to be with disinflation in order to protect the investment and participation of the community. Thus, the end state of the DeFi presale will determine the disinflation parameters of Kaspa monetary policy embedded in the Genesis block of Kaspa, according to a precommitted formula.
-
-A concrete description of the contract and mechanics appears [here](https://www.daglabs.com/mining).
+The transactions in steps 3 and 4 are executed immediately on rollups X and Y, respectively, but are actionable outside each rollup only after the finality delay. (BTW, similarly to trustless staking pools, trustless liquidity pools don’t make sense. Happy to help.)
 
 ---
 <br>
 **Notes**
 
-\* [Title reference](https://youtu.be/IG_Nu2pCytM)
+\* [Title reference](https://www.youtube.com/watch?v=aJS5-0hyVA8)
 
-[^1]: The excitement around Grin was comprised as follows: 15%—writing in Rust, 25%—author’s pseudonym “Mimblewimble” from Harry Potter, 25%—the protocol itself, allowing cut-through of STxOs when syncing new nodes, 35%—a known Blockstream dev contributing to the project.
-
-[^2]: To *some* extent, the to-be-described mechanism replaces one of the roles of PoW, namely, a slow and organic price-discovery and distribution mechanism. Indeed I argue that in today’s crypto climate PoW can no longer *fully* serve this role properly, and is instead “just” the best infrastructure for a secure, sovereign cryptocurrency.
-
-[^3]: Most miners, as it turns out, follow the market and do not lead it. They are not particularly interested in the software and the protocol, which explains why they won’t be a proper target audience for an Initial ASIC Offering.
+[^1]: In contrast to optimistic rollups, ZKRUs rely on (the stronger) validity proofs, and do not require therefore a finality delay. However, there is some delay until proofs are generated, and the tech seems infeasible as a short-to-mid term solution for general purpose smart contracts. Efforts here are pioneered by MatterLabs and Starkware.
