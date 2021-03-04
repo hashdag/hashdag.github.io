@@ -64,6 +64,25 @@ Folks have proposed to circumvent the finality delay using cross-rollup liquidit
 
 The transactions in steps 3 and 4 are executed immediately on rollups X and Y, respectively, but are actionable outside each rollup only after the finality delay. (BTW, similarly to trustless staking pools, trustless liquidity pools don’t make sense. Happy to help.)
 
+### Ethereum future.0
+
+After this deliberation, and reflecting on the possible outcomes, I see few possibilities for the Ethereum system henceforth:
+
+Monopolistic Scenario: One rollup takes it all, sync composability wins, sharding loses. In this path, there is a scalability gain from decoupling computation from data availability (the former handled by the rollup, the latter by base consensus), which is somewhat beneficial, but users’ transactions still impose full externalities on the entire network, so state bloat is not addressed. Since different rollups introduce different assumptions (e.g., ZKRUs don’t rely on censorship resistance for correctness), one winner takes it all could be more risky.
+
+I will elaborate on why this is still somewhat beneficial in another post.
+
+Optimistic Scenario: Multiple rollups thrive, sync composability is ruined, async composability is useless, Ethereum network is fragmented into rollup subnetworks, and liquidity providers facilitate the interoperability of the subnetworks with respect to fungible tokens.
+
+Ethereum’s base layer would remain the kernel of the ecosystem, its settlement layer, serving the dispute resolution (DR) and snark/stark verification functionalities, and potentially the data availability (DA) one as well. While Ethereum’s base consensus is okay for DR, these scenarios would/should probably lead to using a different DA layer that is optimized for this functionality; Vitalik half-jokingly once suggested BCH as a candidate, and some side-chain projects offer their own DA layer. (This topic is outside the scope of this post, but do remind me to tell you about the ideal requirements from a DA layer, in light of the MEV crisis. Thanks.) 
+
+All hell breaks loose scenario: A supernova event. With the ecosystem being built on the foundations of a shared state kernel, and with this kernel losing its power due to the unscalability and surging gas prices, natural and genuine forces in the community will clash amid efforts to coordinate migration into specific rollups, and recenter around a shared state. Considering the size of the community, coordinating migration will fail, clashes will increase, and the system and its original vision will collapse onto itself, leading to what I dub a supernova of the Ethereum giant.
+
+The network effect of Ethereum as a cohesive ecosystem will evaporate into the ether, and the remnants of this event would form few to many subnetworks interoperating through designated LPs, ignoring or skipping Ethereum’s base layer, implementing their own data availability and dispute resolution layers. Sociodevologically, projects and devs would still identify themselves as hardcore Ethereans. However, the social consensus around this identity, and the legitimacy of proclaiming it, will naturally fracture.
+
+“The world will spin and the color will fade, and we’ll be reduced to a spectrum of gray.”
+
+
 ---
 <br>
 **Notes**
