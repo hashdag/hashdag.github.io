@@ -1,8 +1,8 @@
 ---
-title: "Block Liveness Matters"
+title: "Yonatan Sompolinsky's homepage"
 og-type: website
 layout: index
 nav: main
 ---
 
-A blog on crypto, tech, and the West. 
+Where I cluster my online activity
