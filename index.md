@@ -1,5 +1,5 @@
 ---
-title: "Yonatan Sompolinsky's homepage"
+title: "my homepage"
 og-type: website
 layout: index
 nav: main
