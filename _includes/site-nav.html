@@ -19,16 +19,22 @@
 <a href="/blog" title="Blog">Blog</a>
 {% endif %}
   
-{% if page.url == "/poems" %}
+{% if page.url == "/abc" %}
+<span class="nav-current-page" >   </span>
+{% else %}
+<a href="/blog" title="ABC">   </a>
+{% endif %}
+
+  {% if page.url == "/poems" %}
 <span class="nav-current-page" >Poems</span>
 {% else %}
 <a href="/blog" title="Poems">Poems</a>
 {% endif %}
   
 {% if page.url == "/xyz" %}
-<span class="nav-current-page" >XYZ</span>
+<span class="nav-current-page" >   </span>
 {% else %}
-<a href="/blog" title="Poems">XYZ</a>
+<a href="/blog" title="XYZ">   </a>
 {% endif %}
   
   
