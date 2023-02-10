@@ -1,35 +1,35 @@
-{%- assign dateOfPost = {{post.date | date: "%d"}} -%}
+{%- assign dateOfPoem = {{poem.date | date: "%d"}} -%}
 
-{%- if dateOfPost == "01" or dateOfPost == "21" or dateOfPost == "31" -%}
+{%- if dateOfPoem == "01" or dateOfPoem == "21" or dateOfPoem == "31" -%}
 	{%- assign ordinalEnding = "st" -%}
-{%- elsif dateOfPost == "02" or dateOfPost == "22" -%}
+{%- elsif dateOfPoem == "02" or dateOfPoem == "22" -%}
 	{%- assign ordinalEnding = "nd" -%}
-{%- elsif dateOfPost == "03" or dateOfPost == "23" -%}
+{%- elsif dateOfPoem == "03" or dateOfPoem == "23" -%}
 	{%- assign ordinalEnding = "rd" -%}
 {%- else %}
 	{%- assign ordinalEnding = "th" -%}
 {%- endif %}
 
 
-{%- assign firstDigitDofP = dateOfPost | slice: 0 -%}
+{%- assign firstDigitDofP = dateOfPoem | slice: 0 -%}
 
 {%- if firstDigitDofP == "0" -%}
-	{%- assign prettyDateOfPost = dateOfPost | slice: 1 -%}
+	{%- assign prettyDateOfPoem = dateOfPoem | slice: 1 -%}
 {%- else -%}
-	{%- assign prettyDateOfPost = dateOfPost -%}
+	{%- assign prettyDateOfPoem = dateOfPoem -%}
 {%- endif -%}
 
 
-{%- if post.category == "now" and postCounter != "pastFirstNow" and page.url != "/now" -%}
+{%- if poem.category == "now" and poemCounter != "pastFirstNow" and page.url != "/now" -%}
 
-<p><a href="/now" title="{{ post.title }}" class="blog-listing-link">{{ post.title }}</a><br>
-<time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B" }} {{prettyDateOfPost}}{{ ordinalEnding }}, {{ post.date | date: "%Y" }}</time></p>
+<p><a href="/now" title="{{ poem.title }}" class="blog-listing-link">{{ poem.title }}</a><br>
+<time datetime="{{ poem.date | date: '%Y-%m-%d' }}">{{ poem.date | date: "%B" }} {{prettyDateOfPoem}}{{ ordinalEnding }}, {{ poem.date | date: "%Y" }}</time></p>
 
-{%- assign postCounter = "pastFirstNow" -%}
+{%- assign poemCounter = "pastFirstNow" -%}
 
 {%- else -%}
 
-<p><a href="{{ post.url }}" title="{{ post.title }}" class="blog-listing-link">{{ post.title }}</a><br>
-<time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B" }} {{prettyDateOfPost}}{{ ordinalEnding }}, {{ post.date | date: "%Y" }}</time></p>
+<p><a href="{{ poem.url }}" title="{{ poem.title }}" class="blog-listing-link">{{ poem.title }}</a><br>
+<time datetime="{{ poem.date | date: '%Y-%m-%d' }}">{{ poem.date | date: "%B" }} {{prettyDateOfPoem}}{{ ordinalEnding }}, {{ poem.date | date: "%Y" }}</time></p>
 
 {%- endif -%}
