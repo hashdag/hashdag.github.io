@@ -1,5 +1,5 @@
 ---
-title: "my homepage"
+title: "my personal website"
 og-type: website
 layout: index
 nav: main
