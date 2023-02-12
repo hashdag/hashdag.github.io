@@ -8,7 +8,7 @@ nav: none
 
 {% for post in site.posts %}
 {% unless post.categories contains "unlisted" or post.categories contains "now" %}
-{% include post-listing.html %}
+{% include blog-listing.html %}
 {% endunless %}
 {% endfor %}
 
