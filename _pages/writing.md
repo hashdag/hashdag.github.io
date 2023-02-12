@@ -1,5 +1,5 @@
 ---
-title: שירים ראשונים
+title: some poems etc
 description: "Speak the language of the Hebrew man."
 og-type: website
 permalink: /writing
