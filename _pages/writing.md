@@ -6,7 +6,7 @@ permalink: /writing
 nav: none
 ---
 
-{% for post in site.posts %}
+{% for post in site.poems %}
 {% unless post.categories contains "unlisted" or post.categories contains "now" %}
 {% include blog-listing.html %}
 {% endunless %}
