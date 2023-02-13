@@ -1,13 +1,13 @@
 ---
 title: Blog Posts
-description: "The list of all of my blog posts."
+description: "The list of all of my writings."
 og-type: website
-permalink: /blog
+permalink: /writing
 nav: none
 ---
 
 {% for post in site.posts %}
-{% if post.categories contains "blog" %}
+{% if post.categories contains "writing" %}
 {% include blog-listing.html %}
 {% endunless %}
 {% endfor %}
