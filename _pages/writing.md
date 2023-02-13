@@ -9,7 +9,7 @@ nav: none
 {% for post in site.posts %}
 {% if post.categories contains "writing" %}
 {% include blog-listing.html %}
-{% endunless %}
+{% endif %}
 {% endfor %}
 
  
