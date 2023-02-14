@@ -3,6 +3,7 @@ title: In which we'll bе reduced to a spectrum of gray*
 description: "A thesis about Ethereum's rollup-centric future, and a potential supernova event"
 tags: crypto kaspa
 permalink: /blog/supernova
+categories: blog
 ---
 
 ### Why is Ethereum Ethereum
