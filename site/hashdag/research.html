@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>research — hashd.ag</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --serif: 'EB Garamond', Georgia, serif; --mono: 'Courier Prime', monospace; --bg: #fafaf8; --ink: #1c1b19; --mid: #6e6c66; --faint: #b0ada6; --rule: #e0ddd8; }
+@media (prefers-color-scheme: dark) { :root { --bg: #131210; --ink: #e4e1da; --mid: #888680; --faint: #4a4845; --rule: #272522; } }
+html { font-size: 18px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.65; max-width: 560px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--faint); margin-bottom: 4.5rem; text-decoration: none; display: block; }
+.sig:hover { color: var(--mid); }
+.label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); margin-bottom: 1rem; margin-top: 3rem; }
+p { font-size: 1rem; color: var(--mid); margin-bottom: 1.2rem; line-height: 1.7; }
+.list { list-style: none; border-top: 0.5px solid var(--rule); }
+.list li { padding: 0.75rem 0; border-bottom: 0.5px solid var(--rule); font-size: 1rem; }
+.list li a { color: var(--ink); text-decoration: none; }
+.list li a:hover { color: var(--mid); }
+.list li p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--faint); font-family: var(--mono); letter-spacing: 0.03em; }
+.questions { list-style: none; border-top: 0.5px solid var(--rule); }
+.questions li { padding: 0.75rem 0; border-bottom: 0.5px solid var(--rule); font-style: italic; color: var(--mid); font-size: 1rem; line-height: 1.5; }
+.contact { margin-top: 3rem; font-size: 1rem; color: var(--mid); }
+.contact a { color: var(--ink); text-decoration: none; border-bottom: 0.5px solid var(--rule); }
+.contact a:hover { color: var(--mid); }
+.footer { margin-top: 4.5rem; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--faint); display: flex; gap: 1.5rem; }
+.footer a { color: var(--faint); text-decoration: none; }
+.footer a:hover { color: var(--mid); }
+</style>
+</head>
+<body>
+
+<a href="/" class="sig">hashd.ag</a>
+
+<p>Research associate at Harvard, working at the intersection of mechanism design, distributed systems, and the political economy of protocols.</p>
+
+<div class="label">papers</div>
+<ul class="list">
+  <li>
+    The Price of Anarchy Is a Policy Choice
+    <p>working paper — coordination markets, equilibrium selection</p>
+  </li>
+  <li>
+    <a href="https://eprint.iacr.org/2018/104" target="_blank">PHANTOM: A Scalable BlockDAG Protocol</a>
+    <p>2018</p>
+  </li>
+  <li>
+    <a href="https://eprint.iacr.org/2013/881" target="_blank">Accelerating Bitcoin's Transaction Processing</a>
+    <p>2013 — the paper that started this</p>
+  </li>
+</ul>
+
+<div class="label">open questions</div>
+<ul class="questions">
+  <li>If no-amplification is trivially satisfied by deterministic strategies, what does robustness actually buy?</li>
+  <li>Global games + MEV auction noise → selective elimination of collusive equilibria. Looking for prior work.</li>
+  <li>Can conditional commitments become a native digital primitive, the way money became one?</li>
+  <li>What must a digital association layer actually guarantee to be non-trivial?</li>
+</ul>
+
+<div class="contact">
+  For collaborations and research questions — <a href="https://x.com/hashdag" target="_blank">@hashdag</a>
+</div>
+
+<div class="footer">
+  <a href="https://x.com/hashdag" target="_blank">x</a>
+  <a href="https://hashdag.medium.com/" target="_blank">medium</a>
+  <a href="https://kaspa.org" target="_blank">kaspa</a>
+</div>
+
+</body>
+</html>

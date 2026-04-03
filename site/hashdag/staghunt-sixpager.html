@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>staghunt — hashd.ag</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --serif: 'EB Garamond', Georgia, serif; --mono: 'Courier Prime', monospace; --bg: #fafaf8; --ink: #1c1b19; --mid: #6e6c66; --faint: #b0ada6; --rule: #e0ddd8; }
+@media (prefers-color-scheme: dark) { :root { --bg: #131210; --ink: #e4e1da; --mid: #888680; --faint: #4a4845; --rule: #272522; } }
+html { font-size: 18px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.65; max-width: 520px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--faint); margin-bottom: 3.5rem; text-decoration: none; display: block; }
+.sig:hover { color: var(--mid); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: 1.1rem; color: var(--ink); margin: 2.8rem 0 0.9rem; }
+p { font-size: 1rem; color: var(--mid); line-height: 1.75; margin-bottom: 1rem; }
+.sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 3rem; text-transform: lowercase; }
+.rule { width: 100%; height: 0.5px; background: var(--rule); margin: 2.5rem 0; }
+.glossary { list-style: none; border-top: 0.5px solid var(--rule); margin: 1rem 0; }
+.glossary li { padding: 0.6rem 0; border-bottom: 0.5px solid var(--rule); font-size: 0.95rem; color: var(--mid); display: flex; gap: 1rem; }
+.glossary li strong { color: var(--ink); font-weight: 400; min-width: 5rem; font-style: italic; }
+.axioms { list-style: none; margin: 1rem 0; }
+.axioms li { padding: 0.8rem 0; border-bottom: 0.5px solid var(--rule); font-size: 0.95rem; color: var(--mid); line-height: 1.7; }
+.axioms li:first-child { border-top: 0.5px solid var(--rule); }
+.axioms li em { color: var(--ink); font-style: normal; }
+.schematic { font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: var(--faint); line-height: 1.9; margin: 1.5rem 0; }
+.label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); margin-bottom: 1rem; margin-top: 2.5rem; }
+.row-list { list-style: none; border-top: 0.5px solid var(--rule); }
+.row-list li { padding: 0.6rem 0; border-bottom: 0.5px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 0.95rem; color: var(--ink); }
+.row-list li span { font-family: var(--mono); font-size: 9px; color: var(--faint); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<a href="/" class="sig">hashd.ag</a>
+
+<p class="sub">a six pager on coordination markets</p>
+
+<h2>1. Azazel</h2>
+
+<p>Every generation a new social theory offers a fresh "solution" to "society", galvanizing our freshmen and the existentially unmoored. Workers of the world unite, tax the rich, check your privilege. But before we Greta ourselves into the abyss, we should less enthusiastically analyze when and how our current system — capitalism — fails or underperforms: What specifically fails when you give agents the autonomy to gather information, make judgment calls, choose actions, bear consequences?</p>
+
+<p>Oh! you cry, The Prisoner's Dilemma! Aha The Moloch!!</p>
+
+<p>But the games we actually play suggest a different response, one that promises less than social-welfare optimization, but also demands less than rewiring our selfish instincts and slaying the Moloch. Namely, mechanisms for committable and actionable coordination.</p>
+
+<p>Consider Rousseau's stag hunt: Two hunters can collaborate on a stag and eat well, or each hunt a hare and eat for a few hours. Both are better off coordinating on a stag — wherein neither is incentivized to defect! — but moving from hare to stag alone makes you worse off. If they are stuck in a (hare,hare) equilibrium, the challenge is not defection from cooperation rather failure to reach coordination (stag,stag).</p>
+
+<div style="display:flex; gap:2rem; margin:1.5rem 0 1.5rem; flex-wrap:wrap;">
+  <img src="staghunt-fig1.png" alt="Fig. 1: Prisoner's Dilemma" style="max-width:200px; opacity:0.85;">
+  <img src="staghunt-fig2.png" alt="Fig. 2: Stag Hunt" style="max-width:200px; opacity:0.85;">
+</div>
+
+<p>If Moloch is the demon of defection, this is a different demon. I call it Azazel — the deity of the wilderness, pre civilization, where humans wander alone and no associations form.</p>
+
+<p>The distinction between Moloch and Azazel matters because these two demons require very different remedies. If you believe society is trapped mostly by Moloch, the natural response is to build central institutions that restrain selfish behavior. Central planning, regulation, social-justice activism, superintelligence singletons. But if the problem is mainly Azazel, the remedy changes — people's behaviour doesn't need to be corrected or coerced, they already want to collaborate. What we lack, in the Azazel-Staghunt framework, is "merely" mechanisms to communicate and bind shared actions.</p>
+
+<p>In short, we need Coordination Markets.</p>
+
+<h2>2. Why Cheap Talk Is Not Enough</h2>
+
+<p>Coordination Markets (CMs) are a category of markets built around binding primitives for coordinated action. These primitives compose, condition on external state, respond dynamically to market activity, and settle atomically.</p>
+
+<p>Improving the internet through better communication channels does not suffice, since cheap talk is non-binding. In many scenarios, moving alone is risky: hunting a stag alone risks hunger and injury, rioting alone against a despot risks death, bootstrapping a liquidity pool alone risks getting eaten alive by arbitrageurs.</p>
+
+<p>The missing layer, therefore, is not communication but binding intents, otherwise known as assurance contracts (Bagnoli and Lipman 1989). An assurance contract is a primitive allowing one to express and enforce conditional commitments of the form "I will do X if N others do X." In our stack, these conditional commitments will be called intendos.</p>
+
+<p>None of this is fundamentally new. PledgeBank ran conditional commitments from 2005, but the binding there was enforced by social pressure in small groups. The Point built assurance contracts in 2007, then pivoted to Groupon. Kickstarter owned assurance contracts for creative projects, but remained niche. Each of these attempts either collapsed into a single vertical or was heavily biased toward petitions and activism, which is an esoteric death sentence.</p>
+
+<p>Instead, we should take a market approach to coordination. A market framing has many implications; three immediate ones: First, endogenous incentives. Participants communicate their intents and commit not merely because they believe in the cause, but also because the mechanism makes commitment individually rational.</p>
+
+<p>Second, a market approach is unopinionated — it should engineer for no specific agenda or world order. Market rails should remain open to whatever coordination problems and causes users initiate. The mechanism should support heterogeneous preferences and risk thresholds, rather than hard-code a single safety threshold. A tenured professor might come out of the closet provided 5 colleagues do so; an assistant professor might require 50; one LP is comfortable with a liquidity bootstrap floor of $1M; another demands $10M.</p>
+
+<p>Third, the mechanism should be able to condition on external state. Conditions should be able to reference on-chain data, real-world events, and other facts verifiable on the web. Intendos should also be able to condition on other intendos, chaining coordination markets into multi-stage sequences.</p>
+
+<p>But before any of that, CMs must allow shielding one's intendo. Even before the move-alone risk, being the first to signal willingness is itself a primary source of risk: revealing one's political preferences in a hostile environment, disclosing one's financial intention in the face of arb bots, exposing a social cause when it is still small and can be killed. Allowing for confidential intents should receive axiomatic treatment.</p>
+
+<h2>3. The Mechanism</h2>
+
+<p>A social or financial entrepreneur believes she spotted a Stag — a certain opportunity that increases the payoff of its rational participants. She posts a Hunt, and individual users or agents discover it and contemplate. An agent deciding to join signs cryptographically an intent to join — an intendo — conditioned on a sufficient number of others joining too. The signed intendos accumulate and Pack, in an opaque process, during which more agents opt in but also may opt out at will. Once some subset of agents crosses the threshold, satisfying internally the threshold conditions of all of its members, the Hunt snaps and executes together.</p>
+
+<img src="staghunt-fig3.png" alt="The Hunt" style="width:100%; max-width:380px; opacity:0.8; margin:1.5rem 0;">
+
+<ul class="glossary">
+  <li><strong>Stag</strong> coordination market instance; defines target outcome, execution logic, and community eligibility.</li>
+  <li><strong>Pack</strong> accumulation phase; intendos cluster around a Stag, aggregate state is opaque.</li>
+  <li><strong>Hunt</strong> resolution; a qualifying subset is found and execution triggers atomically; remaining intendos persist for future resolution.</li>
+</ul>
+
+<p>Four properties are axiomatic for the core primitive of CMs:</p>
+
+<ul class="axioms">
+  <li><em>i. Coordinated Atomicity.</em> The commitments of the qualifying subset execute simultaneously across all participants; no partial execution, no gradual commit, as this would undermine the assurance.</li>
+  <li><em>ii. Accumulation Opacity.</em> No-one — neither participants nor operators — can determine how close the initiative is to activation. The threshold crosses or it does not.</li>
+  <li><em>iii. Capital Multiplexing.</em> Users can co-commit the same capital across different markets; whatever commitment activates first applies. Crucial for capital efficiency, UX scalability, and participation in overlapping markets.</li>
+  <li><em>iv. Composability.</em> The output of one market is a valid input to another, and can compose with other shared state contracts. Coordination markets as lego blocks.</li>
+</ul>
+
+<h2>4. Stags in the Wild</h2>
+
+<p>A broad category where CMs have particular utility is escaping network effect traps. Apps that "suck but everyone's using it", or the media platform that's blatantly lying but everyone's watching it. CMs allow the public's true preference to materialize as concrete switching plans — in formal terms, it allows to aggregate demand and to alter the focality.</p>
+
+<p>Example 1: Liquidity migration. Superior DeFi machinery exists but liquidity is stuck on legacy tech, 5.7B$ on BNB for instance. LPs don't move because moving alone means providing liquidity to an empty pool. Utilizing CMs, each LP can set a threshold for migrating — 5M$, 50M, 500M — whatever they need to feel comfortable. Their capital stays productive until a subset's thresholds are met and resolved.</p>
+
+<p>Example 2: Content platform bootstrap. Large segments of users resent the agenda of dominant platforms but face a pure coordination failure: entrepreneurs can't know if the ranting users will actually act, and users can't know if others will follow. CMs make the latent demand legible and binding.</p>
+
+<h2>5. Attention and DAC</h2>
+
+<p>The rewards for the DAC mechanism originate from a social/political/financial entrepreneur willing to fund the fail rewards. Instead of capital buying attention and shaping opinion, influencing public opinion becomes costly only if you fail to shape it. The asymmetry significantly weakens the advantage of capital: a billionaire funding a fringe cause pays when the public doesn't follow, whereas a correct minority rallies the public resource-free.</p>
+
+<p>Attention markets are designed to amplify organic propagation dynamics of some underlying social network. Ideally, coordination initiatives would propagate spontaneously via group chats, community forums, DMs. But whenever we enforce Opaque Accumulation (Axiom 2) we are shielding participants' intendos from their peers, which goes against organic social discoverability.</p>
+
+<p>Can we preserve p2p propagation while maintaining privacy and deniability? Designated Verifiable Proofs (DVPs) to the rescue. DVPs enable off-the-record messaging: they allow a prover to convince a peer, or a set of peers (Multi-DVP / MDVS), that a certain statement is correct whilst maintaining full deniability in case the proof is leaked. In practice this looks like group chat messages that are internally verifiable yet practically unleakable.</p>
+
+<p>Besides attention dynamics, initiators of stags should fund the continuous computation of the state of the pack. The CM stack requires a layer of operators/searchers/solvers continuously checking for subsets of intendos that can be co-satisfied. The funding for this computation can start with the stag entrepreneur — and migrate to a fee model sustained by the pack once it reaches scale.</p>
+
+<div class="rule"></div>
+
+<p>Revisiting the full lifecycle:</p>
+
+<div class="schematic">
+entrepreneur spots a Stag<br>
+→ seeds a Hunt, DAC-backed<br>
+→ intendos accumulate (paid if it fails)<br>
+→ signals propagate p2p via DVPs<br>
+→ Pack grows opaque<br>
+→ compute scans for satisfiable subset<br>
+→ threshold hits<br>
+→ Hunt snaps, atomic execution
+</div>
+
+<img src="staghunt-fig4.png" alt="Lifecycle diagram" style="width:100%; opacity:0.85; margin:1.5rem 0;">
+
+<h2>6. The Stack</h2>
+
+<p>Beyond generic support for market mechanics, the stack requires:</p>
+
+<p>Intendos — the layer aggregating persistent intents of users. Limited implementations exist (CowSwap), but far from the flexibility required for CMs' composability and multiplexing.</p>
+
+<p>An efficient data structure and incremental algorithmic framework to solve Pack states. For a large set of intendos, resolving the state belongs to the class of monotone fixed-point computation, which admits incremental algorithms of time complexity O(polylog) or O(1) amortized. Non-monotone intendos — ones which condition on the Pack not exceeding a certain amount — render the problem NP-hard in the general case and should remain outside what CM rails aspire to support.</p>
+
+<p>A cryptographic protocol supporting opaque accumulation of the pack. The broad family is secure multi-party computation (sMPC), but standard interactive sMPC is incompatible with continuous evaluation over an open permissionless validator set. The mostly-noninteractive alternative is threshold FHE, which distributes a shared public key at the outset and runs a lightweight sMPC for the decryption phase. Feasibility requires deploying mixed-mode, hiding only essential parts — typically less than 5% of a program's logic needs to run in encrypted mode.</p>
+
+<p>Coordination by definition leads to large market moves and cascading effects. Any gap between pack formation and execution increases the manipulation surface. To eliminate or minimize this gap, CMs must run on infrastructure satisfying censorship resistance, permissionlessness, and fairness in real time — what I call real-time decentralization (RTD).</p>
+
+<h2>7. The Consistent Individualist</h2>
+
+<p>In democratic ages, the bonds of human affection are extended, but relaxed (de Tocqueville). The internet, the ultimate egalitarian project, allowed us to connect with complete anons and discover shared ideas and interests. But it did not offer ways to move together and act on common interests. It is missing an association layer which grants dynamic, ephemeral, or context-specific communities 'write' permissions to the shared state of the digital space.</p>
+
+<p>Project Staghunt aims to build it.</p>
+
+<div class="rule"></div>
+
+<div class="label">papers</div>
+<ul class="row-list">
+  <li>The Price of Anarchy Is a Policy Choice<span>working paper</span></li>
+</ul>
+
+<div class="label">talks</div>
+<ul class="row-list">
+  <li>Collective Action and the Soul of Crypto<span>oxford union, 2024</span></li>
+</ul>
+
+</body>
+</html>

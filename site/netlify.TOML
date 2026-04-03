@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://staghunt.hashd.ag/*"
+  to = "/staghunt/:splat"
+  status = 200
+  force = true
