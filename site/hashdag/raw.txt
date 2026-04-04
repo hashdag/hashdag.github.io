@@ -89,11 +89,11 @@ Title reference
 Originally published at https://blocklivenessmatters.com on November 24, 2020.
 ---
 [2020-03-04] [ethereum] [rollups] [defi] [scalability]
-In which we’ll bе reduced to a spectrum of gray*
+In which we’ll be reduced to a spectrum of gray*
 
 Why is Ethereum Ethereum
 
-In which we’ll bе reduced to a spectrum of gray*
+In which we’ll be reduced to a spectrum of gray*
 Why is Ethereum Ethereum
 Sure, Ethereum is great and all, but why? What exactly made it into this vibrant and innovative ecosystem? And can it last? I’m writing this post in an attempt to clarify to self and pinpoint Ethereum’s unique value offering and the emergent decentralized finance ecosystem.
 Ethereum’s success is commonly ascribed to its composability, the ability to compose one smart contract on top of another like lego boxes, leaving little-to-no need for development coordination, as once a dev team deployed a smart contract, any other smart contract can access it, permissionlessly. However, while Ethereum does harvest the power of openness and permissionlessness to reuse, extend, and compose different code bases and code components — this is by no means new or unique, it characterizes general open source values and structure. Almost by definition, open source allows one to build software composed of several code bases and libraries developed by others. So shared functionality, or composability of functionalities, isn’t precising the matter.
