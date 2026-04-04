@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaspa (Black Tuesday) — hashd.ag</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --serif: 'EB Garamond', Georgia, serif; --mono: 'Courier Prime', monospace; --bg: #fafaf8; --ink: #1c1b19; --mid: #6e6c66; --faint: #b0ada6; --rule: #e0ddd8; }
+@media (prefers-color-scheme: dark) { :root { --bg: #131210; --ink: #e4e1da; --mid: #888680; --faint: #4a4845; --rule: #272522; } }
+html { font-size: 18px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.75; max-width: 520px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--faint); margin-bottom: 3.5rem; text-decoration: none; display: block; }
+.sig:hover { color: var(--mid); }
+.post-date { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 0.6rem; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; line-height: 1.2; margin-bottom: 2.5rem; color: var(--ink); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+h3 { font-family: var(--serif); font-weight: 400; font-size: 1rem; color: var(--ink); font-style: italic; margin: 1.8rem 0 0.6rem; }
+h4 { font-family: var(--serif); font-weight: 400; font-size: 1rem; color: var(--mid); margin: 1.5rem 0 0.5rem; }
+p { font-size: 1rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.1rem; }
+a { color: var(--mid); }
+a:hover { color: var(--ink); }
+ul, ol { margin: 0 0 1.1rem 1.4rem; }
+li { font-size: 1rem; color: var(--mid); line-height: 1.75; margin-bottom: 0.3rem; }
+blockquote { border-left: 1px solid var(--rule); padding-left: 1.2rem; margin: 1.5rem 0; font-style: italic; color: var(--mid); }
+.rule { width: 100%; height: 0.5px; background: var(--rule); margin: 2.5rem 0; }
+img { width: 100%; margin: 1.5rem 0; opacity: 0.9; }
+figcaption { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; color: var(--faint); margin-top: -1rem; margin-bottom: 1.5rem; }
+pre { font-family: var(--mono); font-size: 0.8rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.1rem; overflow-x: auto; }
+code { font-family: var(--mono); font-size: 0.85rem; color: var(--mid); }
+hr { border: none; border-top: 0.5px solid var(--rule); margin: 2rem 0; }
+</style>
+</head>
+<body>
+<a href="/" class="sig">hashd.ag</a>
+<div class="post-date">Nov 23, 2021</div>
+<article>
+
+<section>
+This post assumes reader context on the crash of the Kaspa network in the course of the last 48 hours, and provides some additional notes…
+</section>
+<section>
+<section name="9da8"><div><hr></div><div><div><h3 name="024e">Kaspa (Black Tuesday)</h3><p name="a82d">This post assumes reader context on the crash of the Kaspa network in the course of the last 48 hours, and provides some additional notes and perspective.</p><p name="3020">(1) To simplify logic and debugging, and since the gamenet concept didn’t really catch air, I removed the random block reward and replaced the average block reward of 500 with a deterministic block reward of 500. Thus, if so far we mined <strong>on average</strong> 86400x500=43200000 Kaspa per day, we will henceforth mine <strong>deterministically </strong>86400x500=43200000 Kaspa per day.</p><p name="b058">(2) Many ppl expressed their concern about the future rebase that will take place soon. I want to reiterate that the rebase is cosmetic only, it’s a rename, an altering of representation. If you mined so far, say, 10% of the (total or of the circulating) supply of Kaspa, you will posses 10% after the rebase as well.</p><p name="1eaa">(3) The deflationary monetary policy HF that I mentioned here (https://discord.com/channels/599153230659846165/909907923084382218/911015904144420895 or <a href="https://hashdag.medium.com/kaspa-launch-plan-responding-to-reality-6b4bec449037" rel="nofollow noopener" target="_blank">https://hashdag.medium.com/kaspa-launch-plan-responding-to-reality-6b4bec449037</a>) will be specified next week, after syncing and mining resume for a few days, the network remains fully operational and confident, and the voluntary Kaspa magicians (Ori, Michael, Elichai) get some sleep and catch up with their own research and ventures.</p><p name="4875">(4) The community by and large reacted solidly to the crash. Thank you! No-one took it lightheartedly, and at the same time most focus was on providing datadirs and other useful info, getting instructions, funny memes. Let’s hope we won’t need to test ourselves again in similar circumstance.</p><p name="41fd">(5) There was some genuine misunderstanding regarding the approaches we were looking into. Specifically, we were never considering a rollback in the sense of pointing at an early state which we were satisfied with and wanted to revert to, and discarding blocks and transactions appended to it later. Rather, we were searching for the <em>latest</em> state for which we have a <em>certainly-valid</em> UTXO commitment. While many users shared with us up-to-date datadirs, and while we had our own datadirs, we had to spend effort and time to ensure that the UTXO commitment builds correctly. Thus, we (read: aforementioned devs) had to rebuild the state afresh, feed it with such datadirs, and compare the commitments. Fortunately, the UTXO that we built hashed into the same UTXO commitment string embedded in the latest block in the datadir, producing 710f27df423e63aa6cdb72b89ea5a06cffa399d66f167704455b5af59def8e20, which proved that the DAG UTXO algebra was not erroneous, but “merely” a victim of the memory problem. This is not to say the architecture of this module should not be revised and improved — -a more correct architecture would protect it from DB failures.</p><p name="c349">(6) Kaspa is here to stay, in case you were wondering.</p></div></div></section>
+</section>
+</article>
+</body>
+</html>
