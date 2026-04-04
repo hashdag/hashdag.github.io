@@ -19,23 +19,49 @@ body { background: var(--bg); color: var(--ink); font-family: var(--serif); line
 .row-list a { font-size: 1rem; color: var(--ink); text-decoration: none; }
 .row-list a:hover { color: var(--mid); }
 .row-list li span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; color: var(--faint); white-space: nowrap; }
-.poem-footer { margin-top: 3.5rem; padding-top: 2rem; border-top: 0.5px solid var(--rule); }
+.notebook { margin-top: 2.8rem; padding-top: 2rem; border-top: 0.5px solid var(--rule); }
+.notebook-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.6rem; }
+.notebook-link { font-family: var(--serif); font-size: 1rem; color: var(--mid); text-decoration: none; display: block; line-height: 1.5; }
+.notebook-link:hover { color: var(--ink); }
+.notebook-note { font-family: var(--mono); font-size: 10px; color: var(--faint); margin-top: 0.4rem; line-height: 1.6; }
+.poem-footer { margin-top: 2.8rem; padding-top: 2rem; border-top: 0.5px solid var(--rule); }
 .poem-text { font-size: 13px; line-height: 2.1; color: var(--faint); }
 .poem-credit { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.6rem; opacity: 0.6; }
+.site-map { margin-top: 2.8rem; padding-top: 1.5rem; border-top: 0.5px solid var(--rule); font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--faint); }
+.site-map a { color: var(--faint); text-decoration: none; }
+.site-map a:hover { color: var(--mid); }
 </style>
 </head>
 <body>
 
 <div class="sig">hashd.ag</div>
 
-<ul class="row-list" id="posts">
-  <li><a href="https://hashdag.medium.com/in-which-it-was-never-my-choice-to-hold-the-fire-we-found-937314149402" target="_blank">In which it was never my choice to hold the fire we found</a><span>2025</span></li>
-  <li><a href="https://hashdag.medium.com/in-which-we-are-all-faceless-until-we-have-faces-part-i-5f100e0555a4" target="_blank">In which we are all faceless until we have faces</a><span>2025</span></li>
-  <li><a href="kaspa-where-to-4.html" target="_blank">Kaspa where to (Part IV, last)</a><span>2023</span></li>
-  <li><a href="https://hashdag.medium.com/in-which-mayday-mayday-we-are-syncing-about-bf05ad58957a" target="_blank">In which mayday mayday we are syncing about</a><span>2022</span></li>
-  <li><a href="https://hashdag.medium.com/in-which-i-run-with-the-ghosts-of-my-hometown-95ad503c88c" target="_blank">In which I run with the GHOSTs of my hometown</a><span>2021</span></li>
-  <li><a href="https://hashdag.medium.com/in-which-i-have-no-patience-to-wait-til-by-and-by-b79ce53726b3" target="_blank">In which I have no patience to wait 'til by and by</a><span>2021</span></li>
+<ul class="row-list">
+  <li><a href="in-which-it-was-never-my-choice-to-hold-the-fire-we-found-93.html">In which it was never my choice to hold the fire we found</a><span>2025</span></li>
+  <li><a href="in-which-we-are-all-faceless-until-we-have-faces-5f100e0555a.html">In which we are all faceless until we have faces</a><span>2025</span></li>
+  <li><a href="kaspa-where-to-part-iv-last-c68717a8d309.html">Kaspa where to (Part IV, last)</a><span>2023</span></li>
+  <li><a href="kaspa-where-to-part-iii-72ddd0bbe6ae.html">Kaspa where to (Part III)</a><span>2022</span></li>
+  <li><a href="kaspa-where-to-part-ii-c080bcef2f3a.html">Kaspa where to (Part II)</a><span>2022</span></li>
+  <li><a href="kaspa-where-to-part-i-ce6a1a2c8eb0.html">Kaspa where to (Part I)</a><span>2022</span></li>
+  <li><a href="kaspa-black-tuesday-8c7f4fa35834.html">Kaspa (Black Tuesday)</a><span>2021</span></li>
+  <li><a href="kaspa-launch-plan-responding-to-reality-6b4bec449037.html">Kaspa launch plan (responding to reality)</a><span>2021</span></li>
+  <li><a href="kaspa-launch-plan-9a63f4d754a6.html">Kaspa launch plan</a><span>2021</span></li>
+  <li><a href="in-which-mayday-mayday-we-are-syncing-about-bf05ad58957a.html">In which mayday mayday we are syncing about</a><span>2021</span></li>
+  <li><a href="in-which-i-have-no-patience-to-wait-til-by-and-by-b79ce53726.html">In which I have no patience to wait 'til by and by</a><span>2020</span></li>
+  <li><a href="in-which-i-love-my-truly-truly-fair-60e74cbaaf7b.html">In which I love my truly, truly fair</a><span>2020</span></li>
+  <li><a href="in-which-i-run-with-the-ghosts-of-my-hometown-95ad503c88c.html">In which I run with the GHOSTs of my hometown</a><span>2020</span></li>
+  <li><a href="in-which-we-ll-b-reduced-to-a-spectrum-of-gray-c259c4d25b0e.html">In which we'll be reduced to a spectrum of gray</a><span>2020</span></li>
 </ul>
+
+<div class="notebook">
+  <div class="notebook-label">corpus</div>
+  <a href="YOUR_NOTEBOOKLM_URL" target="_blank" class="notebook-link">Ask the archive — NotebookLM interface to the public corpus</a>
+  <div class="notebook-note">speaks from writing, talks, and research — not private correspondence</div>
+</div>
+
+<div class="site-map">
+  <a href="staghunt.html">staghunt</a> · <a href="kaspa.html">kaspa</a> · <a href="research.html">research</a>
+</div>
 
 <div class="poem-footer">
   <div class="poem-text">
