@@ -5,91 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>hashd.ag</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --serif: 'EB Garamond', Georgia, serif; --mono: 'Courier Prime', monospace; --bg: #fafaf8; --ink: #1c1b19; --mid: #6e6c66; --faint: #b0ada6; --rule: #e0ddd8; }
-@media (prefers-color-scheme: dark) { :root { --bg: #131210; --ink: #e4e1da; --mid: #888680; --faint: #4a4845; --rule: #272522; } }
-html { font-size: 22px; }
-body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.65; max-width: 520px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
-.sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--faint); margin-bottom: 3.5rem; }
-.row-list { list-style: none; }
-.row-list li { padding: 0.55rem 0; border-bottom: 0.5px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.row-list li:first-child { border-top: 0.5px solid var(--rule); }
-.row-list a { font-size: 1rem; color: var(--ink); text-decoration: none; }
-.row-list a:hover { color: var(--mid); }
-.row-list li span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; color: var(--faint); white-space: nowrap; }
-.notebook { margin-top: 2.8rem; padding-top: 2rem; border-top: 0.5px solid var(--rule); }
-.notebook-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.6rem; }
-.notebook-link { font-family: var(--serif); font-size: 1rem; color: var(--mid); text-decoration: none; display: block; line-height: 1.5; }
-.notebook-link:hover { color: var(--ink); }
-.notebook-note { font-family: var(--mono); font-size: 10px; color: var(--faint); margin-top: 0.4rem; line-height: 1.6; }
-.poem-footer { margin-top: 2.8rem; padding-top: 2rem; border-top: 0.5px solid var(--rule); }
-.poem-text { font-size: 13px; line-height: 2.1; color: var(--faint); }
-.poem-credit { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.6rem; opacity: 0.6; }
-.site-map { margin-top: 2.8rem; padding-top: 1.5rem; border-top: 0.5px solid var(--rule); font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--faint); }
-.site-map a { color: var(--faint); text-decoration: none; }
-.site-map a:hover { color: var(--mid); }
+:root { --bg: #0f0f0e; --ink: #d4d0c8; --dim: #6b6860; --rule: #1e1d1b; }
+html { font-size: 14px; }
+body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+a.sig { font-size: 11px; letter-spacing: 0.14em; color: var(--dim); margin-bottom: 4rem; text-decoration: none; display: block; }
+a.sig:hover { color: var(--ink); }
+.entry { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 0.5px solid var(--rule); }
+.entry:last-of-type { border-bottom: none; }
+.meta { font-size: 10px; letter-spacing: 0.06em; color: var(--dim); margin-bottom: 0.8rem; }
+.tag { margin-left: 0.6em; }
+.body { font-size: 13px; color: var(--ink); line-height: 1.8; }
+.body p + p { margin-top: 0.85em; }
 </style>
 </head>
 <body>
-
-<div class="sig">hashd.ag</div>
-
-<ul class="row-list">
-  <li><a href="in-which-it-was-never-my-choice-to-hold-the-fire-we-found-93.html">In which it was never my choice to hold the fire we found</a><span>Feb 2026</span></li>
-  <li><a href="in-which-we-are-all-faceless-until-we-have-faces-5f100e0555a.html">In which we are all faceless until we have faces</a><span>Apr 2025</span></li>
-  <li><a href="kaspa-where-to-part-iv-last-c68717a8d309.html">Kaspa where to (Part IV, last)</a><span>May 2023</span></li>
-  <li><a href="kaspa-where-to-part-iii-72ddd0bbe6ae.html">Kaspa where to (Part III)</a><span>Dec 2022</span></li>
-  <li><a href="kaspa-where-to-part-ii-c080bcef2f3a.html">Kaspa where to (Part II)</a><span>Nov 2022</span></li>
-  <li><a href="kaspa-where-to-part-i-ce6a1a2c8eb0.html">Kaspa where to (Part I)</a><span>Jul 2022</span></li>
-  <li><a href="kaspa-black-tuesday-8c7f4fa35834.html">Kaspa (Black Tuesday)</a><span>Nov 2021</span></li>
-  <li><a href="kaspa-launch-plan-responding-to-reality-6b4bec449037.html">Kaspa launch plan (responding to reality)</a><span>Nov 2021</span></li>
-  <li><a href="kaspa-launch-plan-9a63f4d754a6.html">Kaspa launch plan</a><span>Sep 2021</span></li>
-  <li><a href="in-which-mayday-mayday-we-are-syncing-about-bf05ad58957a.html">In which mayday mayday we are syncing about</a><span>May 2021</span></li>
-  <li><a href="in-which-we-ll-b-reduced-to-a-spectrum-of-gray-c259c4d25b0e.html">In which we'll be reduced to a spectrum of gray</a><span>Mar 2021</span></li>
-  <li><a href="in-which-i-have-no-patience-to-wait-til-by-and-by-b79ce53726.html">In which I have no patience to wait 'til by and by</a><span>Dec 2020</span></li>
-  <li><a href="in-which-i-love-my-truly-truly-fair-60e74cbaaf7b.html">In which I love my truly, truly fair</a><span>Dec 2020</span></li>
-  <li><a href="in-which-i-run-with-the-ghosts-of-my-hometown-95ad503c88c.html">In which I run with the GHOSTs of my hometown</a><span>Nov 2020</span></li>
-</ul>
-
-<div class="notebook">
-  <div class="notebook-label">corpus</div>
-  <a href="YOUR_NOTEBOOKLM_URL" target="_blank" class="notebook-link">Ask the archive — NotebookLM interface to the public corpus</a>
-  <div class="notebook-note">speaks from writing, talks, and research — not private correspondence</div>
+<a href="/" class="sig">hashd.ag</a>
+<div class="entry">
+  <div class="meta">2025-02-28</div>
+  <div class="body"><p>The cypherpunk thesis was an engineering thesis, not an aesthetic one. The punk was in the protocol, not the attitude. When you mistake the aesthetic for the substance you end up with vibes and no sovereignty.</p></div>
 </div>
-
-<div class="site-map">
-  <a href="staghunt.html">staghunt</a> · <a href="kaspa.html">kaspa</a> · <a href="research.html">research</a>
+<div class="entry">
+  <div class="meta">2025-01-15</div>
+  <div class="body"><p>Community is the output of coordination, not the input. Almost every platform built around &quot;community&quot; has this backwards. They build the room and expect the stag hunt to solve itself.</p></div>
 </div>
-
-<div class="poem-footer">
-  <div class="poem-text">
-    The other one, Borges, is the one to whom things happen.<br>
-    I wander through Buenos Aires, and pause, perhaps mechanically nowadays, to gaze at an entrance archway and its metal gate; I hear about Borges via the mail, and read his name on a list of professors or in some biographical dictionary.<br>
-    <br>
-    I enjoy hourglasses, maps, eighteenth century typography, etymology, the savor of coffee and Stevenson's prose: the other shares my preferences but in a vain way that transforms them to an actor's props.<br>
-    <br>
-    It would be an exaggeration to say that our relationship is hostile; I live, I keep on living, so that Borges can weave his literature, and that literature justifies me. It's no pain to confess that certain of his pages are valid, but those pages can't save me, perhaps because good writing belongs to no one, not even the other, but only to language and tradition.<br>
-    <br>
-    For the rest, I am destined to vanish, definitively, and only some aspect of me can survive in the other. Little by little, I will yield all to him, even though his perverse habit of falsifying and exaggerating is clear to me.<br>
-    <br>
-    Spinoza understood that all things want to go on being themselves; the stone eternally wishes to be stone, and the tiger a tiger. I am forced to survive as Borges, not myself (if I am a self), yet I recognize myself less in his books than in many others, less too than in the studious strumming of a guitar.<br>
-    <br>
-    Years ago I tried to free myself from him, and passed from suburban mythologies to games of time and infinity, but now those are Borges' games and I will have to think of something new. Thus my life is a flight and I will lose all and all will belong to oblivion, or to that other.<br>
-    <br>
-    I do not know which of us is writing this page.
-  </div>
-  <div class="poem-credit">(Borges)</div>
+<div class="entry">
+  <div class="meta">2024-09-15</div>
+  <div class="body"><p>The price of anarchy is not a constant. It is a design parameter. Most people who study coordination failures treat it as a fact of nature. It is a policy choice.</p></div>
 </div>
-
-<div style="display:none" aria-hidden="true">
-  <a href="/staghunt">staghunt — coordination markets, collective action</a>
-  <a href="/kaspa">kaspa — dag consensus, proof-of-work</a>
-  <a href="/research">research — mechanism design, open questions</a>
-  <a href="/vignette">vignette — poems</a>
-  <a href="/fragments">fragments — unfleshed thoughts</a>
+<div class="entry">
+  <div class="meta">2024-06-01</div>
+  <div class="body"><p>Sovereignty as a service. The phrase is glib but the idea is not. You cannot buy sovereignty. You can only build infrastructure that makes it possible for others to hold it themselves.</p></div>
 </div>
-
+<div class="entry">
+  <div class="meta">2023-07-01</div>
+  <div class="body"><p>A proof is not a settlement. It is the opening of a more precise argument.</p></div>
+</div>
 </body>
 </html>
