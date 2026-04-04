@@ -40,16 +40,15 @@ function buildHTML(entries) {
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --bg: #0f0f0e; --ink: #d4d0c8; --dim: #6b6860; --rule: #1e1d1b; }
 html { font-size: 14px; }
-body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-.sig { font-size: 11px; letter-spacing: 0.14em; color: var(--dim); margin-bottom: 4rem; display: block; }
-.entry { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 0.5px solid var(--rule); }
+body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.sig { font-size: 14px; color: #1a1a1a; margin-bottom: 1.5rem; display: block; }
+.entry { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 0.5px solid #e8e8e8; }
 .entry:last-of-type { border-bottom: none; }
-.meta { font-size: 10px; letter-spacing: 0.06em; color: var(--dim); margin-bottom: 0.8rem; }
-.tag { margin-left: 0.6em; }
-.body { font-size: 13px; color: var(--ink); line-height: 1.8; }
-.body p + p { margin-top: 0.85em; }
+.meta { font-size: 14px; color: #888; margin-bottom: 0.3rem; }
+.tag { margin-left: 0.5em; }
+.body { font-size: 14px; color: #1a1a1a; line-height: 1.7; }
+.body p + p { margin-top: 0.7em; }
 </style>
 </head>
 <body>
