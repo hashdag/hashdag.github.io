@@ -1,0 +1,8 @@
+[build]
+  publish = "site/hashdag"
+
+[[redirects]]
+  from = "/raw"
+  to = "/raw.txt"
+  status = 200
+  force = true

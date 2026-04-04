@@ -28,9 +28,11 @@ function today() {
 }
 
 function find(entries, prefix) {
-  const matches = entries.filter(e => e.id.startsWith(prefix) || e.id.split('_')[1].startsWith(prefix));
-  if (matches.length === 0) { console.error(`No entry matching "${prefix}"`); process.exit(1); }
-  if (matches.length > 1) { console.error(`Ambiguous: "${prefix}" matches ${matches.length} entries. Use more characters.`); process.exit(1); }
+  const matches = entries.filter(e =>
+    e.id.startsWith(prefix) || e.id.split('_')[1] === prefix
+  );
+  if (matches.length === 0) { console.error(`no entry matching "${prefix}"`); process.exit(1); }
+  if (matches.length > 1) { console.error(`ambiguous: "${prefix}" matches ${matches.length} entries`); process.exit(1); }
   return matches[0];
 }
 
@@ -44,19 +46,36 @@ function commit(msg) {
   execSync(`git -C "${ROOT}" push origin main`, { stdio: 'inherit' });
 }
 
-const [,, cmd, ...args] = process.argv;
+function openEditor(initial) {
+  const tmpFile = path.join(os.tmpdir(), `hashdag_${Date.now()}.txt`);
+  fs.writeFileSync(tmpFile, initial, 'utf8');
+  const editor = process.env.EDITOR || (process.platform === 'win32' ? 'notepad' : 'vi');
+  const result = spawnSync(editor, [tmpFile], { stdio: 'inherit' });
+  if (result.status !== 0) { console.error('editor exited with error'); process.exit(1); }
+  const content = fs.readFileSync(tmpFile, 'utf8').trimEnd();
+  fs.unlinkSync(tmpFile);
+  return content;
+}
 
 function getArg(flag) {
   const i = args.indexOf(flag);
   return i >= 0 ? args[i + 1] : undefined;
 }
 
+const [,, cmd, ...args] = process.argv;
+
 if (cmd === 'add') {
   const rawTags = getArg('--tags');
-  const body = getArg('--body');
+  let body = getArg('--body');
   const timestamp = getArg('--date') || today();
+  const useEditor = args.includes('--edit') || body === undefined;
   const tags = rawTags ? rawTags.split(',').map(t => t.trim()).filter(Boolean) : [];
-  if (!body) { console.error('--body is required'); process.exit(1); }
+
+  if (useEditor) {
+    body = openEditor('');
+    if (!body) { console.error('empty body, nothing saved'); process.exit(1); }
+  }
+
   const entry = {
     id: genId(),
     timestamp,
@@ -103,8 +122,7 @@ if (cmd === 'add') {
   if (!args[0]) { console.error('usage: hashdag delete <id>'); process.exit(1); }
   const entries = load();
   const e = find(entries, args[0]);
-  const idx = entries.indexOf(e);
-  entries.splice(idx, 1);
+  entries.splice(entries.indexOf(e), 1);
   save(entries);
   rebuild();
   commit(`delete ${args[0]}`);
@@ -113,13 +131,7 @@ if (cmd === 'add') {
   if (!args[0]) { console.error('usage: hashdag edit <id>'); process.exit(1); }
   const entries = load();
   const e = find(entries, args[0]);
-  const tmpFile = path.join(os.tmpdir(), `hashdag_${e.id}.txt`);
-  fs.writeFileSync(tmpFile, e.body, 'utf8');
-  const editor = process.env.EDITOR || (process.platform === 'win32' ? 'notepad' : 'vi');
-  const result = spawnSync(editor, [tmpFile], { stdio: 'inherit' });
-  if (result.status !== 0) { console.error('Editor exited with error'); process.exit(1); }
-  e.body = fs.readFileSync(tmpFile, 'utf8').trimEnd();
-  fs.unlinkSync(tmpFile);
+  e.body = openEditor(e.body);
   save(entries);
   rebuild();
   commit(`edit ${args[0]}`);
@@ -131,29 +143,30 @@ if (cmd === 'add') {
     return b.timestamp.localeCompare(a.timestamp);
   });
   sorted.forEach(e => {
-    const preview = e.body.replace(/\n/g, ' ').slice(0, 60);
-    const tags = e.tags.length ? ` [${e.tags.join(',')}]` : '';
-    const w = String(e.weight).padStart(5);
-    console.log(`${e.id}  ${e.timestamp}  w:${w}  ${preview}…${tags}`);
+    const preview = e.body.replace(/\n/g, ' ').slice(0, 60).padEnd(60);
+    const tags = e.tags.length ? `  [${e.tags.join(',')}]` : '';
+    const w = String(e.weight).padStart(4);
+    console.log(`${e.id}  ${e.timestamp}  w:${w}  ${preview}${tags}`);
   });
 
 } else {
   console.log(`hashdag — content CLI for hashd.ag
 
 usage:
-  hashdag add --body "..." [--tags "t1,t2"] [--date YYYY-MM-DD]
+  hashdag add [--tags "t1,t2"] [--date YYYY-MM-DD] [--body "..." | --edit]
   hashdag pin <id>            set weight to 100 (canon)
   hashdag unpin <id>          set weight to 0 (stream)
-  hashdag weight <id> <n>     set weight to n
-  hashdag edit <id>           open body in $EDITOR
+  hashdag weight <id> <n>     set weight to any integer
+  hashdag edit <id>           open body in \$EDITOR
   hashdag delete <id>         remove entry
   hashdag list                show all entries sorted by weight then date
 
-weight convention:
-  100      top-tier canon
-  50–99    secondary canon
-  0        stream (default)
-  negative pushed to bottom
+  add without --body opens \$EDITOR automatically.
+  <id> can be a prefix of the full id or just the 4-char hex suffix.
 
-<id> can be a prefix of the full id or just the 4-char hex suffix.`);
+weight convention:
+  100      top-tier canon (always in first screen)
+  50–99    secondary canon
+  0        stream (default, newest-first)
+  negative pushed to bottom without deleting`);
 }

@@ -43,8 +43,7 @@ function buildHTML(entries) {
 :root { --bg: #0f0f0e; --ink: #d4d0c8; --dim: #6b6860; --rule: #1e1d1b; }
 html { font-size: 14px; }
 body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-a.sig { font-size: 11px; letter-spacing: 0.14em; color: var(--dim); margin-bottom: 4rem; text-decoration: none; display: block; }
-a.sig:hover { color: var(--ink); }
+.sig { font-size: 11px; letter-spacing: 0.14em; color: var(--dim); margin-bottom: 4rem; display: block; }
 .entry { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 0.5px solid var(--rule); }
 .entry:last-of-type { border-bottom: none; }
 .meta { font-size: 10px; letter-spacing: 0.06em; color: var(--dim); margin-bottom: 0.8rem; }
@@ -54,7 +53,7 @@ a.sig:hover { color: var(--ink); }
 </style>
 </head>
 <body>
-<a href="/" class="sig">hashd.ag</a>
+<span class="sig">hashd.ag</span>
 ${body}
 </body>
 </html>
