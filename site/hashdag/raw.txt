@@ -1,7 +1,7 @@
 [2026-04-01] [staghunt] [coordination-markets] [RTD]
 Project Staghunt
 
-A Six Pager on Coordination Markets / @hashdag
+A Six Pager on Coordination Markets
 
 1. Azazel
 
