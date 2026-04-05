@@ -78,7 +78,7 @@ function buildHTML(entries, active) {
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-size: 14px; line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
 .header { margin-bottom: 12px; }
-.sig { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #1a1a1a; display: block; text-decoration: none; }
+.sig { font-family: Georgia, serif; font-size: 13px; color: #1a1a1a; display: block; text-decoration: none; }
 .handles { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; text-align: right; margin-top: 8px; }
 .handle { color: #999; text-decoration: none; }
 .handle:hover { text-decoration: underline; }
