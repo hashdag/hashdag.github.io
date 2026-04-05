@@ -58,7 +58,7 @@ function renderEntry(e) {
   return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
   <details>
-    <summary>${preview}</summary>
+    <summary><span class="preview">${preview}</span></summary>
     <div class="body">${restParagraphs}</div>
   </details>
 </div>`;
@@ -109,6 +109,7 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .pdf-link a:hover { text-decoration: underline; }
 details { margin: 0; }
 summary { font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; cursor: pointer; }
+details[open] .preview { display: none; }
 details .body { margin-top: 0.5em; }
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
