@@ -93,7 +93,7 @@ ${sigHTML}
 <div class="entries-gap"></div>
 ${body}
 <script>
-(function(){
+document.fonts.ready.then(function(){
   var MAX = 11 * 1.7 * 3; // font-size * line-height * 3 lines = ~56px
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
     var el = entry.querySelector('.body');
@@ -107,7 +107,7 @@ ${body}
     g.onclick = function(){ el.classList.toggle('folded'); g.textContent = el.classList.contains('folded') ? '+' : '\u2212'; };
     entry.appendChild(g);
   });
-})();
+});
 </script>
 </body>
 </html>

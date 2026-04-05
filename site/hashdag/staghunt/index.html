@@ -37,7 +37,7 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 <div class="entries-gap"></div>
 
 <script>
-(function(){
+document.fonts.ready.then(function(){
   var MAX = 11 * 1.7 * 3; // font-size * line-height * 3 lines = ~56px
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
     var el = entry.querySelector('.body');
@@ -51,7 +51,7 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
     g.onclick = function(){ el.classList.toggle('folded'); g.textContent = el.classList.contains('folded') ? '+' : '−'; };
     entry.appendChild(g);
   });
-})();
+});
 </script>
 </body>
 </html>
