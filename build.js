@@ -61,12 +61,13 @@ ${body}
   document.querySelectorAll('.entry').forEach(function(entry){
     var body = entry.querySelector('.body');
     if (!body) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight);
+    if (body.scrollHeight <= lh * 3 + 1) return;
     body.classList.add('folded');
-    if (body.scrollHeight <= body.clientHeight) { body.classList.remove('folded'); return; }
     var g = document.createElement('span');
     g.className = 'fold-toggle';
     g.textContent = '+';
-    g.style.top = (body.offsetTop - entry.offsetTop) + 'px';
+    g.style.top = body.offsetTop + 'px';
     g.onclick = function(){ body.classList.toggle('folded'); g.textContent = body.classList.contains('folded') ? '+' : '\u2212'; };
     entry.appendChild(g);
   });

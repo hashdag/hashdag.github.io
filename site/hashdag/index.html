@@ -84,12 +84,13 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
   document.querySelectorAll('.entry').forEach(function(entry){
     var body = entry.querySelector('.body');
     if (!body) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight);
+    if (body.scrollHeight <= lh * 3 + 1) return;
     body.classList.add('folded');
-    if (body.scrollHeight <= body.clientHeight) { body.classList.remove('folded'); return; }
     var g = document.createElement('span');
     g.className = 'fold-toggle';
     g.textContent = '+';
-    g.style.top = (body.offsetTop - entry.offsetTop) + 'px';
+    g.style.top = body.offsetTop + 'px';
     g.onclick = function(){ body.classList.toggle('folded'); g.textContent = body.classList.contains('folded') ? '+' : '−'; };
     entry.appendChild(g);
   });
