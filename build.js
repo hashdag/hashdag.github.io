@@ -29,7 +29,7 @@ function renderEntry(e) {
     .join('');
   const bodyDiv = `<div class="body">${paragraphs}</div>`;
 
-  const plain = e.body.replace(/\n/g, ' ');
+  const plain = e.body.replace(/\n\n/g, ' / ').replace(/\n/g, ' ');
   let content;
   if (plain.length <= 200) {
     content = bodyDiv;
