@@ -74,10 +74,11 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .entry:last-of-type { border-bottom: none; }
 .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
 .tag { margin-left: 0.5em; letter-spacing: 0.03em; }
-.body { font-size: 14px; color: #1a1a1a; line-height: 1.75; max-height: 4.8em; overflow: hidden; }
+.body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
 .body p:last-child { margin-bottom: 0; }
-.body.open, [data-nofold] .body { max-height: none; }
+.body.folded { max-height: 4.8em; overflow: hidden; position: relative; }
+.body.folded::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5em; background: linear-gradient(transparent, #fafaf8); }
 .fold-toggle { font-family: 'IBM Plex Mono', monospace; position: absolute; left: -1.2em; top: calc(11px * 1.5 + 0.3rem); cursor: pointer; font-size: 10px; color: #999; user-select: none; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
@@ -90,18 +91,27 @@ ${sigHTML}
 <div class="handles">${handlesHTML}</div>
 </div>
 ${body}
-<div class="footer"><a href="/raw">raw.txt</a></div>
+${active ? '' : '<div class="footer"><a href="/raw">raw.txt</a></div>'}
 <script>
-document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
-  var el = entry.querySelector('.body');
-  var g = document.createElement('span');
-  g.className = 'fold-toggle';
-  g.textContent = '+';
-  g.onclick = function(){
-    el.classList.toggle('open');
-    g.textContent = el.classList.contains('open') ? '\u2212' : '+';
-  };
-  entry.appendChild(g);
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
+    var el = entry.querySelector('.body');
+    if (!el) return;
+    el.classList.add('folded');
+    var g = document.createElement('span');
+    g.className = 'fold-toggle';
+    g.textContent = '+';
+    g.onclick = function(){
+      if (el.classList.contains('folded')) {
+        el.classList.remove('folded');
+        g.textContent = '\u2212';
+      } else {
+        el.classList.add('folded');
+        g.textContent = '+';
+      }
+    };
+    entry.appendChild(g);
+  });
 });
 </script>
 </body>
