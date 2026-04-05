@@ -27,10 +27,23 @@ function renderEntry(e, noFold) {
     .split('\n\n')
     .map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`)
     .join('');
-  const noFoldAttr = noFold ? ' data-nofold="1"' : '';
-  return `<div class="entry"${noFoldAttr}>
+  const bodyDiv = `<div class="body">${paragraphs}</div>`;
+
+  let content;
+  if (noFold) {
+    content = bodyDiv;
+  } else {
+    const plain = e.body.replace(/\n/g, ' ');
+    const preview = escapeHTML(plain.slice(0, 200)) + (plain.length > 200 ? '…' : '');
+    content = `<details>
+  <summary>${preview}</summary>
+  ${bodyDiv}
+</details>`;
+  }
+
+  return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>
-  <div class="body">${paragraphs}</div>
+  ${content}
 </div>`;
 }
 
@@ -70,16 +83,18 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .handle { color: #999; text-decoration: none; }
 .handle:hover { text-decoration: underline; }
 .handle.active { color: #1a1a1a; }
-.entry { position: relative; overflow: visible; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
+.entry { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
 .entry:last-of-type { border-bottom: none; }
 .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
 .tag { margin-left: 0.5em; letter-spacing: 0.03em; }
+details { margin: 0; }
+summary { cursor: pointer; font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::marker { display: none; }
+details .body { margin-top: 0.8em; }
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
 .body p:last-child { margin-bottom: 0; }
-.body.folded { max-height: 5.25rem; overflow: hidden; position: relative; }
-.body.folded::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2rem; background: linear-gradient(transparent, #fafaf8); pointer-events: none; }
-.fold-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #333; cursor: pointer; user-select: none; display: inline-block; margin-bottom: 0.3rem; position: relative; z-index: 1; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
@@ -92,27 +107,6 @@ ${sigHTML}
 </div>
 ${body}
 ${active ? '' : '<div class="footer"><a href="/raw">raw.txt</a></div>'}
-<script>
-document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
-  var el = entry.querySelector('.body');
-  if (!el) return;
-  el.classList.add('folded');
-  var g = document.createElement('div');
-  g.className = 'fold-toggle';
-  g.textContent = '+';
-  g.onclick = function(e){
-    e.stopPropagation();
-    if (el.classList.contains('folded')) {
-      el.classList.remove('folded');
-      g.textContent = '\u2212';
-    } else {
-      el.classList.add('folded');
-      g.textContent = '+';
-    }
-  };
-  entry.insertBefore(g, el);
-});
-</script>
 </body>
 </html>
 `;
