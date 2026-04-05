@@ -70,7 +70,7 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .handle { color: #999; text-decoration: none; }
 .handle:hover { text-decoration: underline; }
 .handle.active { color: #1a1a1a; }
-.entry { position: relative; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
+.entry { position: relative; overflow: visible; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
 .entry:last-of-type { border-bottom: none; }
 .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
 .tag { margin-left: 0.5em; letter-spacing: 0.03em; }
@@ -79,7 +79,7 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .body p:last-child { margin-bottom: 0; }
 .body.folded { max-height: 5.25rem; overflow: hidden; position: relative; }
 .body.folded::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2rem; background: linear-gradient(transparent, #fafaf8); pointer-events: none; }
-.fold-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; cursor: pointer; user-select: none; display: inline-block; margin-top: 0.2rem; }
+.fold-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #333; cursor: pointer; user-select: none; display: inline-block; margin-top: 0.2rem; position: relative; z-index: 1; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
