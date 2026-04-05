@@ -44,10 +44,12 @@ function renderEntry(e) {
   const preview = escapeHTML(e.body.replace(/\n\n/g, ' / ').replace(/\n/g, ' ').slice(0, 200)) + '\u2026';
 
   const firstBreak = e.body.indexOf('\n\n');
-  let restText;
+  let titleLine, restText;
   if (firstBreak > 0) {
+    titleLine = e.body.slice(0, firstBreak);
     restText = e.body.slice(firstBreak + 2);
   } else {
+    titleLine = e.body.slice(0, 150);
     restText = e.body.slice(150);
   }
   const restParagraphs = restText
@@ -58,7 +60,7 @@ function renderEntry(e) {
   return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
   <details>
-    <summary><span class="preview">${preview}</span></summary>
+    <summary><span class="preview">${preview}</span><span class="title-line">${escapeHTML(titleLine)}</span></summary>
     <div class="body">${restParagraphs}</div>
   </details>
 </div>`;
@@ -109,7 +111,9 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .pdf-link a:hover { text-decoration: underline; }
 details { margin: 0; }
 summary { font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; cursor: pointer; }
+.title-line { display: none; }
 details[open] .preview { display: none; }
+details[open] .title-line { display: inline; }
 details .body { margin-top: 0.5em; }
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
