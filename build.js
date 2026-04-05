@@ -27,27 +27,18 @@ function renderEntry(e) {
     .split('\n\n')
     .map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`)
     .join('');
-  const bodyDiv = `<div class="body">${paragraphs}</div>`;
 
-  const plain = e.body.replace(/\n\n/g, ' / ').replace(/\n/g, ' ');
-  let content;
-  if (plain.length <= 200) {
-    content = bodyDiv;
-  } else {
-    const preview = escapeHTML(plain.slice(0, 200)) + '…';
-    content = `<details>
-  <summary>${preview}</summary>
-  ${bodyDiv}
-</details>`;
-  }
+  const plain = e.body.replace(/\n/g, ' ');
+  const isLong = plain.length > 200;
 
   const pdfLink = e.pdf
     ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}"><strong>pdf</strong></a></div>`
     : '';
+  const toggle = isLong ? `\n  <span class="toggle">\u2026[+]</span>` : '';
 
   return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
-  ${content}
+  <div class="body${isLong ? ' clipped' : ''}">${paragraphs}</div>${toggle}
 </div>`;
 }
 
@@ -94,12 +85,11 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .pdf-link { margin-bottom: 0.3rem; }
 .pdf-link a { color: #1a1a1a; text-decoration: none; }
 .pdf-link a:hover { text-decoration: underline; }
-details { margin: 0; }
-summary { cursor: pointer; font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; }
-details .body { margin-top: 0.8em; }
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
+.body.clipped { max-height: 5.25rem; overflow: hidden; }
 .body p { margin-bottom: 0.8em; }
 .body p:last-child { margin-bottom: 0; }
+.toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; cursor: pointer; user-select: none; display: block; margin-top: -1.5rem; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
@@ -112,6 +102,20 @@ ${sigHTML}
 </div>
 ${body}
 ${active ? '' : '<div class="footer"><a href="/raw">raw.txt</a></div>'}
+<script>
+document.querySelectorAll('.toggle').forEach(function(g){
+  g.onclick = function(){
+    var body = g.previousElementSibling;
+    if (body.classList.contains('clipped')) {
+      body.classList.remove('clipped');
+      g.textContent = '[\u2212]';
+    } else {
+      body.classList.add('clipped');
+      g.textContent = '\u2026[+]';
+    }
+  };
+});
+</script>
 </body>
 </html>
 `;
