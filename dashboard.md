@@ -1,7 +1,7 @@
 | w | date | tags | preview |
 |---|------|------|------|
-| 100 | 2026-04-01 | staghunt, coordination-markets, RTD | Project Staghunt  A Six Pager on Coordination Markets / @has… |
-| 100 | 2026-03-01 | staghunt, coordination-markets, internet | Oxford Union Address  March 2026  SECTION ONE - THE INTERNET… |
+| 10 | 2026-04-01 | staghunt, coordination-markets, RTD | Project Staghunt  A Six Pager on Coordination Markets / @has… |
+| 10 | 2026-03-01 | staghunt, coordination-markets, internet | Oxford Union Address  March 2026  SECTION ONE - THE INTERNET… |
 | 7 | 2026-02-16 | kaspa, RTD, narrative | In which it was never my choice to hold the fire we found*… |
 | 7 | 2025-06-01 | poem, philosophy | Borges and I / Jorge Luis Borges  The other one, the one cal… |
 | 7 | 2025-04-04 | kaspa, governance, identity | In which we are all faceless until we have faces*  I am the… |
