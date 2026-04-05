@@ -5,7 +5,30 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(ls:*)",
+      "Bash(unzip \"files \\(13\\).zip\")",
+      "WebFetch(domain:hashdag.medium.com)",
+      "Bash(unzip \"../../files \\(14\\).zip\")",
+      "Bash(unzip -o \"../../files \\(14\\).zip\" index.html)",
+      "Bash(grep -h \"post-date\" C:/Users/yonat/myWorkspace/hashd.ag/site/hashdag/*.html)",
+      "Bash(python -c ':*)",
+      "Bash(node build.js)",
+      "WebFetch(domain:hashd.ag)",
+      "Bash(git:*)",
+      "Bash(nslookup hashd.ag)",
+      "Bash(nslookup www.hashd.ag)",
+      "WebFetch(domain:hashd-ag.netlify.app)",
+      "Skill(update-config)",
+      "Bash(unzip -o \"medium-export-e91fec45700413f8faacc16f77b07f20e570120d2557defaff4762d4a44945bb.zip\" -d medium-export)",
+      "Bash(python -c \"import sys,json; lines=sys.stdin.readlines\\(\\); [print\\(json.loads\\(l\\).get\\('message',{}\\).get\\('content',''\\)[:500] if isinstance\\(json.loads\\(l\\).get\\('message',{}\\).get\\('content',''\\),str\\) else ''\\) for l in lines[-20:]]\")",
+      "Bash(python:*)",
+      "Bash(node:*)",
+      "Bash(where gh:*)",
+      "Bash(winget list:*)"
     ]
   }
 }

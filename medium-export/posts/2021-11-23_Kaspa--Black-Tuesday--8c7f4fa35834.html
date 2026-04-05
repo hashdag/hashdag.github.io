@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Kaspa (Black Tuesday)</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Kaspa (Black Tuesday)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+This post assumes reader context on the crash of the Kaspa network in the course of the last 48 hours, and provides some additional notes…
+</section>
+<section data-field="body" class="e-content">
+<section name="9da8" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="024e" id="024e" class="graf graf--h3 graf--leading graf--title">Kaspa (Black Tuesday)</h3><p name="a82d" id="a82d" class="graf graf--p graf-after--h3">This post assumes reader context on the crash of the Kaspa network in the course of the last 48 hours, and provides some additional notes and perspective.</p><p name="3020" id="3020" class="graf graf--p graf-after--p">(1) To simplify logic and debugging, and since the gamenet concept didn’t really catch air, I removed the random block reward and replaced the average block reward of 500 with a deterministic block reward of 500. Thus, if so far we mined <strong class="markup--strong markup--p-strong">on average</strong> 86400x500=43200000 Kaspa per day, we will henceforth mine <strong class="markup--strong markup--p-strong">deterministically </strong>86400x500=43200000 Kaspa per day.</p><p name="b058" id="b058" class="graf graf--p graf-after--p">(2) Many ppl expressed their concern about the future rebase that will take place soon. I want to reiterate that the rebase is cosmetic only, it’s a rename, an altering of representation. If you mined so far, say, 10% of the (total or of the circulating) supply of Kaspa, you will posses 10% after the rebase as well.</p><p name="1eaa" id="1eaa" class="graf graf--p graf-after--p">(3) The deflationary monetary policy HF that I mentioned here (https://discord.com/channels/599153230659846165/909907923084382218/911015904144420895 or <a href="https://hashdag.medium.com/kaspa-launch-plan-responding-to-reality-6b4bec449037" data-href="https://hashdag.medium.com/kaspa-launch-plan-responding-to-reality-6b4bec449037" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://hashdag.medium.com/kaspa-launch-plan-responding-to-reality-6b4bec449037</a>) will be specified next week, after syncing and mining resume for a few days, the network remains fully operational and confident, and the voluntary Kaspa magicians (Ori, Michael, Elichai) get some sleep and catch up with their own research and ventures.</p><p name="4875" id="4875" class="graf graf--p graf-after--p">(4) The community by and large reacted solidly to the crash. Thank you! No-one took it lightheartedly, and at the same time most focus was on providing datadirs and other useful info, getting instructions, funny memes. Let’s hope we won’t need to test ourselves again in similar circumstance.</p><p name="41fd" id="41fd" class="graf graf--p graf-after--p">(5) There was some genuine misunderstanding regarding the approaches we were looking into. Specifically, we were never considering a rollback in the sense of pointing at an early state which we were satisfied with and wanted to revert to, and discarding blocks and transactions appended to it later. Rather, we were searching for the <em class="markup--em markup--p-em">latest</em> state for which we have a <em class="markup--em markup--p-em">certainly-valid</em> UTXO commitment. While many users shared with us up-to-date datadirs, and while we had our own datadirs, we had to spend effort and time to ensure that the UTXO commitment builds correctly. Thus, we (read: aforementioned devs) had to rebuild the state afresh, feed it with such datadirs, and compare the commitments. Fortunately, the UTXO that we built hashed into the same UTXO commitment string embedded in the latest block in the datadir, producing 710f27df423e63aa6cdb72b89ea5a06cffa399d66f167704455b5af59def8e20, which proved that the DAG UTXO algebra was not erroneous, but “merely” a victim of the memory problem. This is not to say the architecture of this module should not be revised and improved — -a more correct architecture would protect it from DB failures.</p><p name="c349" id="c349" class="graf graf--p graf-after--p graf--trailing">(6) Kaspa is here to stay, in case you were wondering.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@hashdag" class="p-author h-card">Yonatan Sompolinsky</a> on <a href="https://medium.com/p/8c7f4fa35834"><time class="dt-published" datetime="2021-11-23T23:52:00.931Z">November 23, 2021</time></a>.</p><p><a href="https://medium.com/@hashdag/kaspa-black-tuesday-8c7f4fa35834" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 4, 2026.</p></footer></article></body></html>
