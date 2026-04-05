@@ -6,6 +6,11 @@ const path = require('path');
 const ENTRIES_PATH = path.join(__dirname, 'entries.json');
 const OUT_DIR = path.join(__dirname, 'site', 'hashdag');
 
+const FILTERS = {
+  kaspa:    e => e.tags.includes('kaspa'),
+  staghunt: e => e.tags.some(t => ['staghunt','stag-hunt','coordination-markets','koko'].includes(t)),
+};
+
 function escapeHTML(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -29,14 +34,35 @@ function renderEntry(e, noFold) {
 </div>`;
 }
 
-function buildHTML(entries) {
+function buildHTML(entries, active) {
+  // active: null | 'kaspa' | 'staghunt'
+  const rawHref  = active ? `/${active}/raw.txt` : '/raw';
+  const rawFooter = active ? `/${active}/raw.txt` : '/raw';
+
+  const sigHTML = active
+    ? `<a class="sig" href="/">hashd.ag</a>`
+    : `<span class="sig">hashd.ag</span>`;
+
+  function handle(name, label) {
+    if (name === active) return `<span class="handle active">${label}</span>`;
+    return `<a class="handle" href="/${name}">${label}</a>`;
+  }
+
+  const handlesHTML = [
+    handle('kaspa', 'kaspa'),
+    handle('staghunt', 'staghunt'),
+    `<a class="handle" href="${rawHref}">raw</a>`,
+  ].join('&nbsp;&nbsp;');
+
+  const title = active ? `hashd.ag / ${active}` : 'hashd.ag';
   const body = entries.map((e, i) => renderEntry(e, i < 2)).join('\n');
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hashd.ag</title>
+<title>${title}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -44,10 +70,11 @@ function buildHTML(entries) {
 html { font-size: 11px; }
 body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
 .header { margin-bottom: 8px; }
-.sig { font-size: 11px; color: #1a1a1a; display: block; }
+.sig { font-size: 11px; color: #1a1a1a; display: block; text-decoration: none; }
 .handles { font-size: 11px; color: #999; text-align: right; }
-.handles a { color: #999; text-decoration: none; }
-.handles a:hover { text-decoration: underline; }
+.handle { color: #999; text-decoration: none; }
+.handle:hover { text-decoration: underline; }
+.handle.active { color: #1a1a1a; }
 .header-gap { height: 8px; }
 .entries-gap { height: 0.6rem; }
 .entry { position: relative; margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom: 0.5px solid #e8e8e8; }
@@ -65,13 +92,13 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 </head>
 <body>
 <div class="header">
-<span class="sig">hashd.ag</span>
+${sigHTML}
 <div class="header-gap"></div>
-<div class="handles">kaspa&nbsp;&nbsp;staghunt&nbsp;&nbsp;<a href="/raw">raw</a></div>
+<div class="handles">${handlesHTML}</div>
 </div>
 <div class="entries-gap"></div>
 ${body}
-<div class="footer"><a href="/raw">raw.txt</a></div>
+<div class="footer"><a href="${rawFooter}">raw.txt</a></div>
 <script>
 (function(){
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
@@ -112,8 +139,18 @@ function sort(entries) {
 const entries = JSON.parse(fs.readFileSync(ENTRIES_PATH, 'utf8'));
 const sorted = sort(entries);
 
+// Root
 fs.mkdirSync(OUT_DIR, { recursive: true });
-fs.writeFileSync(path.join(OUT_DIR, 'index.html'), buildHTML(sorted), 'utf8');
+fs.writeFileSync(path.join(OUT_DIR, 'index.html'), buildHTML(sorted, null), 'utf8');
 fs.writeFileSync(path.join(OUT_DIR, 'raw.txt'), buildRaw(sorted), 'utf8');
+console.log(`built ${sorted.length} entries → index.html + raw.txt`);
 
-console.log(`built ${sorted.length} entries → site/hashdag/index.html + raw.txt`);
+// Filtered views
+for (const [name, filterFn] of Object.entries(FILTERS)) {
+  const filtered = sorted.filter(filterFn);
+  const dir = path.join(OUT_DIR, name);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), buildHTML(filtered, name), 'utf8');
+  fs.writeFileSync(path.join(dir, 'raw.txt'), buildRaw(filtered), 'utf8');
+  console.log(`built ${filtered.length} entries → ${name}/index.html + raw.txt`);
+}

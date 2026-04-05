@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hashd.ag / staghunt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 11px; }
+body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
+.header { margin-bottom: 8px; }
+.sig { font-size: 11px; color: #1a1a1a; display: block; text-decoration: none; }
+.handles { font-size: 11px; color: #999; text-align: right; }
+.handle { color: #999; text-decoration: none; }
+.handle:hover { text-decoration: underline; }
+.handle.active { color: #1a1a1a; }
+.header-gap { height: 8px; }
+.entries-gap { height: 0.6rem; }
+.entry { position: relative; margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom: 0.5px solid #e8e8e8; }
+.entry:last-of-type { border-bottom: none; }
+.meta { font-size: 10px; color: #888; margin-bottom: 0.2rem; }
+.tag { margin-left: 0.6em; font-size: 11px; letter-spacing: 0.02em; }
+.body { font-size: 11px; color: #1a1a1a; line-height: 1.7; }
+.body p + p { margin-top: 0.5em; }
+.body.folded { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.fold-toggle { position: absolute; left: -1.2em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
+.footer { margin-top: 0.8rem; font-size: 10px; color: #888; }
+.footer a { color: #888; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="header">
+<a class="sig" href="/">hashd.ag</a>
+<div class="header-gap"></div>
+<div class="handles"><a class="handle" href="/kaspa">kaspa</a>&nbsp;&nbsp;<span class="handle active">staghunt</span>&nbsp;&nbsp;<a class="handle" href="/staghunt/raw.txt">raw</a></div>
+</div>
+<div class="entries-gap"></div>
+
+<div class="footer"><a href="/staghunt/raw.txt">raw.txt</a></div>
+<script>
+(function(){
+  document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
+    var body = entry.querySelector('.body');
+    if (!body) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight);
+    if (body.scrollHeight <= lh * 3 + 1) return;
+    body.classList.add('folded');
+    var g = document.createElement('span');
+    g.className = 'fold-toggle';
+    g.textContent = '+';
+    g.style.top = body.offsetTop + 'px';
+    g.onclick = function(){ body.classList.toggle('folded'); g.textContent = body.classList.contains('folded') ? '+' : '−'; };
+    entry.appendChild(g);
+  });
+})();
+</script>
+</body>
+</html>
