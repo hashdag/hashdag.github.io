@@ -134,6 +134,18 @@ fs.writeFileSync(path.join(OUT_DIR, 'index.html'), buildHTML(sorted, null), 'utf
 fs.writeFileSync(path.join(OUT_DIR, 'raw.txt'), buildRaw(sorted), 'utf8');
 console.log(`built ${sorted.length} entries → index.html + raw.txt`);
 
+// Dashboard
+function buildDashboard(entries) {
+  const rows = entries.map(e => {
+    const tags = e.tags.join(', ');
+    const preview = e.body.replace(/\n/g, ' ').slice(0, 60).trimEnd() + '…';
+    return `| ${e.weight} | ${e.timestamp} | ${tags} | ${preview} |`;
+  });
+  return `| w | date | tags | preview |\n|---|------|------|------|\n${rows.join('\n')}\n`;
+}
+fs.writeFileSync(path.join(__dirname, 'dashboard.md'), buildDashboard(sorted), 'utf8');
+console.log('built dashboard.md');
+
 // Filtered views
 for (const [name, filterFn] of Object.entries(FILTERS)) {
   const filtered = sorted.filter(filterFn);
