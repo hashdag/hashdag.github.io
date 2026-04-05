@@ -5,7 +5,7 @@ const path = require('path');
 
 // ── Analytics ──────────────────────────────────────────────────────────────
 // Replace this with your real GA4 Measurement ID (format: G-XXXXXXXXXX)
-const GA4_ID = 'G-XXXXXXXXXX';
+const GA4_ID = 'G-4JZ6541HM9';
 // ───────────────────────────────────────────────────────────────────────────
 
 const ENTRIES_PATH = path.join(__dirname, 'entries.json');

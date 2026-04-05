@@ -6,6 +6,21 @@
 <title>hashd.ag / kaspa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4JZ6541HM9"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-4JZ6541HM9');
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[data-track],a.handle,span.tag');
+  if(!a)return;
+  var type=a.dataset.track||( a.classList.contains('handle')?'handle': a.classList.contains('tag')?'tag':null);
+  if(!type)return;
+  gtag('event','click',{event_category:type,event_label:a.textContent.trim()||a.href});
+});
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-size: 14px; line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
