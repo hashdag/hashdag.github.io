@@ -26,9 +26,6 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 .body p + p { margin-top: 0.5em; }
 .body.folded { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .fold-toggle { position: absolute; left: -1.2em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
-.footer { margin-top: 0.8rem; font-size: 10px; color: #888; }
-.footer a { color: #888; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -39,7 +36,6 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 </div>
 <div class="entries-gap"></div>
 
-<div class="footer"><a href="/staghunt/raw.txt">raw.txt</a></div>
 <script>
 (function(){
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){

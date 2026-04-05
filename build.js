@@ -36,8 +36,7 @@ function renderEntry(e, noFold) {
 
 function buildHTML(entries, active) {
   // active: null | 'kaspa' | 'staghunt'
-  const rawHref  = active ? `/${active}/raw.txt` : '/raw';
-  const rawFooter = active ? `/${active}/raw.txt` : '/raw';
+  const rawHref = active ? `/${active}/raw.txt` : '/raw';
 
   const sigHTML = active
     ? `<a class="sig" href="/">hashd.ag</a>`
@@ -85,9 +84,6 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 .body p + p { margin-top: 0.5em; }
 .body.folded { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .fold-toggle { position: absolute; left: -1.2em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
-.footer { margin-top: 0.8rem; font-size: 10px; color: #888; }
-.footer a { color: #888; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -98,7 +94,6 @@ ${sigHTML}
 </div>
 <div class="entries-gap"></div>
 ${body}
-<div class="footer"><a href="${rawFooter}">raw.txt</a></div>
 <script>
 (function(){
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
