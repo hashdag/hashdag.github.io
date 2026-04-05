@@ -41,13 +41,13 @@ function renderEntry(e) {
 </div>`;
   }
 
+  const preview = escapeHTML(e.body.replace(/\n\n/g, ' / ').replace(/\n/g, ' ').slice(0, 200)) + '\u2026';
+
   const firstBreak = e.body.indexOf('\n\n');
-  let summaryText, restText;
+  let restText;
   if (firstBreak > 0) {
-    summaryText = e.body.slice(0, firstBreak);
     restText = e.body.slice(firstBreak + 2);
   } else {
-    summaryText = e.body.slice(0, 150);
     restText = e.body.slice(150);
   }
   const restParagraphs = restText
@@ -58,7 +58,7 @@ function renderEntry(e) {
   return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
   <details>
-    <summary>${escapeHTML(summaryText)}</summary>
+    <summary>${preview}</summary>
     <div class="body">${restParagraphs}</div>
   </details>
 </div>`;
