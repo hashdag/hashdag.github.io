@@ -19,7 +19,7 @@ function escapeHTML(str) {
     .replace(/"/g, '&quot;');
 }
 
-function renderEntry(e, noFold) {
+function renderEntry(e) {
   const tagSpans = e.tags.length
     ? e.tags.map(t => `<span class="tag">[${escapeHTML(t)}]</span>`).join('')
     : '';
@@ -29,12 +29,12 @@ function renderEntry(e, noFold) {
     .join('');
   const bodyDiv = `<div class="body">${paragraphs}</div>`;
 
+  const plain = e.body.replace(/\n/g, ' ');
   let content;
-  if (noFold) {
+  if (plain.length <= 200) {
     content = bodyDiv;
   } else {
-    const plain = e.body.replace(/\n/g, ' ');
-    const preview = escapeHTML(plain.slice(0, 200)) + (plain.length > 200 ? '…' : '');
+    const preview = escapeHTML(plain.slice(0, 200)) + '…';
     content = `<details>
   <summary>${preview}</summary>
   ${bodyDiv}
@@ -64,7 +64,7 @@ function buildHTML(entries, active) {
   ].join('&nbsp;&nbsp;');
 
   const title = active ? `hashd.ag / ${active}` : 'hashd.ag';
-  const body = entries.map((e, i) => renderEntry(e, i < 2)).join('\n');
+  const body = entries.map(e => renderEntry(e)).join('\n');
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -88,9 +88,7 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
 .tag { margin-left: 0.5em; letter-spacing: 0.03em; }
 details { margin: 0; }
-summary { cursor: pointer; font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; list-style: none; }
-summary::-webkit-details-marker { display: none; }
-summary::marker { display: none; }
+summary { cursor: pointer; font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; }
 details .body { margin-top: 0.8em; }
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
