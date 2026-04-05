@@ -4,6 +4,7 @@
 | 7 | 2026-02-16 | kaspa, RTD, narrative | In which it was never my choice to hold the fire we found*… |
 | 7 | 2025-06-01 | poem, philosophy | Borges and I / Jorge Luis Borges  The other one, the one cal… |
 | 7 | 2025-04-04 | kaspa, governance, identity | In which we are all faceless until we have faces*  I am the… |
+| 7 | 2024-06-01 | staghunt, coordination-markets, RTD | Project Staghunt  A Six Pager on Coordination Markets / @has… |
 | 7 | 2021-05-05 | kaspa, trust, sync, pow | In which mayday mayday we are syncing about*  Don’t trust, t… |
 | 7 | 2020-12-28 | kaspa, pow, confirmation, asic | In which I have no patience to wait ’til by and by*  A perso… |
 | 7 | 2020-12-14 | kaspa, launch, mining, fairness | In which I love my truly, truly fair*  DAGlabs is a for-prof… |
