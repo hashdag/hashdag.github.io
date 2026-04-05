@@ -34,11 +34,19 @@ function renderEntry(e) {
   const pdfLink = e.pdf
     ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}"><strong>pdf</strong></a></div>`
     : '';
-  const toggle = isLong ? `\n  <span class="toggle">\u2026[+]</span>` : '';
+  if (!isLong) {
+    return `<div class="entry">
+  <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
+  <div class="body">${paragraphs}</div>
+</div>`;
+  }
 
   return `<div class="entry">
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
-  <div class="body${isLong ? ' clipped' : ''}">${paragraphs}</div>${toggle}
+  <div class="body-wrap">
+    <div class="body clipped">${paragraphs}</div>
+    <span class="toggle">\u2026[+]</span>
+  </div>
 </div>`;
 }
 
@@ -89,7 +97,10 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .body.clipped { max-height: 5.25rem; overflow: hidden; }
 .body p { margin-bottom: 0.8em; }
 .body p:last-child { margin-bottom: 0; }
-.toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; cursor: pointer; user-select: none; display: block; margin-top: -1.5rem; }
+.body-wrap { position: relative; }
+.body.clipped + .toggle { position: absolute; bottom: 0; right: 0; background: #fafaf8; padding-left: 1em; }
+.body:not(.clipped) + .toggle { position: absolute; top: 0; right: 0; }
+.toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; cursor: pointer; user-select: none; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
