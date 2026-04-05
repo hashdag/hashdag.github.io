@@ -42,7 +42,7 @@ function renderEntry(e) {
   }
 
   const pdfLink = e.pdf
-    ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}">[pdf]</a></div>`
+    ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}"><strong>pdf</strong></a></div>`
     : '';
 
   return `<div class="entry">
