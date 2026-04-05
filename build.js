@@ -41,8 +41,12 @@ function renderEntry(e) {
 </details>`;
   }
 
+  const pdfLink = e.pdf
+    ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}">[pdf]</a></div>`
+    : '';
+
   return `<div class="entry">
-  <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>
+  <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>${pdfLink}
   ${content}
 </div>`;
 }
@@ -87,6 +91,9 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .entry:last-of-type { border-bottom: none; }
 .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
 .tag { margin-left: 0.5em; letter-spacing: 0.03em; }
+.pdf-link { margin-bottom: 0.3rem; }
+.pdf-link a { color: #999; text-decoration: none; }
+.pdf-link a:hover { text-decoration: underline; }
 details { margin: 0; }
 summary { cursor: pointer; font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; }
 details .body { margin-top: 0.8em; }

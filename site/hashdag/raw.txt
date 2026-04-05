@@ -1,3 +1,206 @@
+[2026-04-05] [staghunt] [coordination-markets] [governance] [internet]
+SECTION ONE - THE INTERNET
+
+We have one democracy in the world that is, by a large gap, the very worst.
+
+It is in constant decay and turmoil.
+
+It is the epicenter of almost any global drama. It amplifies and complicates many world affairs.
+
+It has near-total free speech, constant participation, and yet almost no capacity to govern itself.
+
+This democracy has failing institutions, arguably no institutions at all.
+
+And still we keep returning to it, interacting with it, arguing over it, although we know this toxicity is not good for our health.
+
+I obviously care about that democracy a great deal, so I will name it for you.
+
+It is the internet.
+
+We treat the internet as a finished project, but it is too young to earn this title.
+
+Democracies take at least a century to stabilize, correct, and build institutions.
+
+We should not expect this 43 year old democracy to have figured itself out. We should not treat it as if its shape and functionality are more or less solved.
+
+You can argue it is not a formal democracy, but you cannot deny it governs and dominates most aspects of your private and public lives.
+
+Yes it has free speech, but free speech should lead eventually to shared understanding and action. The internet currently lacks methods to act on agreement.
+
+Yes you can freely interact and transact with other internet members, but you are still relying on external institutions to enforce these transactions.
+
+If the internet is the greatest egalitarian project humanity ever came up with, it is also the one needing the strongest institutions to strive.
+
+Yet it has none.
+
+The WWW used to feel different.
+
+In the late 90s early 2000s, going online was an elevating experience.
+
+It felt like a strange form of global fraternity - people talking to strangers with a depth that is mostly gone today.
+
+Even the pornographic corners of the early internet arguably had more attachment than much of today’s discourse.
+
+What happened? How come the internet is no longer fun?
+
+When Alexis de Tocqueville reflected on the new society he remarked: “in democratic ages, the bonds of human affection are extended, but relaxed”, that individuals connect with more people but those connections carry less weight.
+
+I believe this is where our diagnosis should begin; namely, by recognizing that our digital democracy obtains the broadest extent of human bonds, but also the shallowest.
+
+That we have built barely no institutions to remedy that.
+
+And that we have simply not been mindful enough to notice the problem.
+
+SECTION TWO - MOLOCH AND AZAZEL
+
+You’ve probably heard of Moloch - the deity revered by the Canaanites 3000 years ago, and more recently by Scott Alexander in his famous essay. Moloch is the demon of defection, responsible for fear and rivalry, and incentivizing people to undercut one another even when everyone ends up worse off.
+
+In game theory, Moloch usually appears as the Prisoner’s Dilemma. Two players would be better off cooperating, yet each has an incentive to defect. So both defect, and everyone ends up worse off.
+
+But Scott overshot it.
+
+Not every social failure is Moloch.
+
+Consider another game.
+
+Two hunters can either collaborate on hunting a stag and eat for a week, or each hunt individually a hare and eat for a few hours.
+
+If they coordinate, both are clearly better off.
+
+Yet if one hunter fears the other will not show up, she safely hunts the hare.
+
+And so we both end up eating rabbits.
+
+This is the Stag Hunt: a game where cooperation is stable and self-reinforcing once reached, yet difficult to reach, because without reliable communication and binding commitments, each hunter fears the other may not show up - and the one who trusted is left hungry and exhausted.
+
+If Moloch is the demon of defection, this is a different demon. I sometimes call it Azazel - the deity of the wilderness, before civilization, where humans wander alone and no associations form.
+
+The distinction between Moloch and Azazel matters because these two demons require very different remedies.
+
+If you believe society is trapped mostly by Moloch, the natural response is to build central institutions that restrain selfish behavior.
+
+Regulation, central planning, or activist social-justice movements to correct people’s behaviour.
+
+But if the problem is mainly Azazel, the remedy changes completely.
+
+People do not need to be forced to cooperate.
+
+They already want to.
+
+What they lack are mechanisms to communicate commitment and bind themselves to shared actions.
+
+This difference shapes our political imagination - especially yours, as Oxford students.
+
+Workers of the world, unite.
+
+Occupy Wall Street!
+
+Eat the rich.
+
+Every few decades a new slogan galvanizes your hearts.
+
+The desire is real, you identify that the state of affairs can be improved if people worked together. But the game is not rigged, and human agency is not corrupt. You can still make a dramatic impact by working with that, and building institutions that better the equilibrium selection of the free markets game.
+
+Do not waste your hearts on slogans that try to replace the self-interested individual with some collective virtue. This always leads down the road to serfdom.
+
+In other words, solve the Stag Hunt.
+
+SECTION THREE
+
+The real problem is assurance - “I move only if others move.”
+
+Hong Kong protests, Libertarian Party support, liquidity migration.
+
+What mechanism would fix this?
+
+A. Assurance, atomic action.
+
+B. Opacity, neutrality.
+
+SECTION FOUR
+
+We derived that the internet democracy desperately needs rails for assurance and coordination.
+
+Requirement recap:
+
+Autonomously, no dictator entity, shared language, enforceable rules, programmable actions, shielding opaque intents.
+
+Everything that was built in crypto in the last two decades, from stateless money base, to programmable money, to encryption techniques, are the building blocks the digital democracy needs.
+
+Crypto hasn’t necessarily recognized this yet. The industry is still in a bear cycle mood, mourning its old narratives and the lost market caps. But the real mission is still ahead of us.
+
+Crypto should be building coordination markets - what I like to call Project Stag Hunt.
+
+SECTION FIVE - HOW A COORDINATION MARKET RUNS
+
+Let me show how a coordination market actually runs. I will use three simple terms - Stag, Pack, and Hunt.
+
+5.1 STAG
+
+A stag is spotted - a better equilibrium.
+
+Example proposal - “Move to a new social platform if enough users commit, and pay $5/month.”
+
+No one moves yet. Everyone waits to see whether others will move.
+
+5.2 PACK
+
+Users join the pack by submitting conditional commitments. “I migrate if at least N others migrate.”
+
+Each participant sets their own threshold. Commitments accumulate privately. No one risks moving alone.
+
+5.3 HUNT
+
+Eventually a subset of commitments satisfies all their thresholds.
+
+At that moment the pack hunts.
+
+The migration executes atomically.
+
+Accounts activate, communities appear, and the network launches with users already there.
+
+5.4 COMPOSABILITY
+
+These hunts are composable - like Lego blocks.
+
+A set of investors might sign commitments: “I invest $10 million if this hunt completes.”
+
+When the hunt resolves, all of these commitments execute atomically.
+
+Users move, capital deploys, infrastructure appears.
+
+5.5 IMPORTANCE OF EMERGENT BEHAVIOUR
+
+Nobody specific coordinated this or engineered society for one specific opportunity.
+
+Decentralized.
+
+No Leviathan or superintelligent singleton.
+
+SECTION SIX - THE BUILDERS
+
+In 1980, the political scientist Langdon Winner posed a question: Do artifacts have politics?
+
+He described a system of bridges on New York’s Long Island - built too low for public buses to reach the beach. They were planned by Robert Moses, a high-status New York urban planner who designed a road that only car owners could use.
+
+Whether this was conscious discrimination or an oversight matters little.
+
+Artifacts are built in the image of their creators.
+
+The cypherpunk pioneers are the Robert Moses of the internet. They built the essential infrastructure for the digital egalitarian project. TCP/IP, encryption, stateless money, programmable contracts, self-custody.
+
+But when it comes to civic tech - community coordination and collective action - the contributions are mostly fringe and disconnected.
+
+Webs of trust, liquid democracy, DAOs - these artifacts were built with the right intention but by the wrong type of builders: brilliant introverts, paranoid, and more comfortable minimizing trust than organizing cooperation.
+
+Hayek wrote: “The consistent individualist ought to be an enthusiastic supporter of voluntary associations”. Many cypherpunks might agree with this in principle, but rarely in temperament.
+
+The internet rails - and definitely crypto - could not have been built by any other mindset or culture. Adversarial trustless personalities are the ultimate builders of the bare backbone of the internet.
+
+But now the roads need to lead somewhere, and a different class of builders should take the reins.
+
+I hope some of you here at Oxford will lead it.
+---
 [2026-02-16] [kaspa] [RTD] [narrative]
 In which it was never my choice to hold the fire we found*
 
