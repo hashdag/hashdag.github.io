@@ -23,21 +23,21 @@ function renderEntry(e) {
   const tagSpans = e.tags.length
     ? e.tags.map(t => `<span class="tag">[${escapeHTML(t)}]</span>`).join('')
     : '';
-  const paragraphs = e.body
-    .split('\n\n')
-    .map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`)
-    .join('');
-  const bodyDiv = `<div class="body">${paragraphs}</div>`;
-
-  const plain = e.body.replace(/\n\n/g, ' / ').replace(/\n/g, ' ');
+  const firstBreak = e.body.indexOf('\n\n');
   let content;
-  if (plain.length <= 200) {
-    content = bodyDiv;
+  if (firstBreak === -1) {
+    const para = `<p>${escapeHTML(e.body).replace(/\n/g, '<br>')}</p>`;
+    content = `<div class="body">${para}</div>`;
   } else {
-    const preview = escapeHTML(plain.slice(0, 200)) + '…';
+    const summaryLine = e.body.slice(0, firstBreak);
+    const remainder = e.body.slice(firstBreak + 2);
+    const remainderParagraphs = remainder
+      .split('\n\n')
+      .map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`)
+      .join('');
     content = `<details>
-  <summary>${preview}</summary>
-  ${bodyDiv}
+  <summary>${escapeHTML(summaryLine)}</summary>
+  <div class="body">${remainderParagraphs}</div>
 </details>`;
   }
 
