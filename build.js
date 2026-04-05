@@ -94,17 +94,17 @@ ${sigHTML}
 ${body}
 <script>
 (function(){
+  var MAX = 11 * 1.7 * 3; // font-size * line-height * 3 lines = ~56px
   document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
-    var body = entry.querySelector('.body');
-    if (!body) return;
-    var lh = parseFloat(getComputedStyle(body).lineHeight);
-    if (body.scrollHeight <= lh * 3 + 1) return;
-    body.classList.add('folded');
+    var el = entry.querySelector('.body');
+    if (!el) return;
+    if (el.getBoundingClientRect().height <= MAX + 2) return;
+    el.classList.add('folded');
     var g = document.createElement('span');
     g.className = 'fold-toggle';
     g.textContent = '+';
-    g.style.top = body.offsetTop + 'px';
-    g.onclick = function(){ body.classList.toggle('folded'); g.textContent = body.classList.contains('folded') ? '+' : '\u2212'; };
+    g.style.top = el.offsetTop + 'px';
+    g.onclick = function(){ el.classList.toggle('folded'); g.textContent = el.classList.contains('folded') ? '+' : '\u2212'; };
     entry.appendChild(g);
   });
 })();
