@@ -8,35 +8,34 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 11px; }
-body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
-.header { margin-bottom: 8px; }
-.sig { font-size: 11px; color: #1a1a1a; display: block; text-decoration: none; }
-.handles { font-size: 11px; color: #999; text-align: right; }
+body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-size: 14px; line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
+.header { margin-bottom: 12px; }
+.sig { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #1a1a1a; display: block; text-decoration: none; }
+.handles { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; text-align: right; margin-top: 8px; }
 .handle { color: #999; text-decoration: none; }
 .handle:hover { text-decoration: underline; }
 .handle.active { color: #1a1a1a; }
-.header-gap { height: 8px; }
-.entries-gap { height: 0.6rem; }
-.entry { position: relative; margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom: 0.5px solid #e8e8e8; }
+.entry { position: relative; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
 .entry:last-of-type { border-bottom: none; }
-.meta { font-size: 10px; color: #888; margin-bottom: 0.2rem; }
-.tag { margin-left: 0.6em; font-size: 11px; letter-spacing: 0.02em; }
-.body { font-size: 11px; color: #1a1a1a; line-height: 1.7; max-height: 4.8em; overflow: hidden; }
-@supports (max-height: 1lh) { .body { max-height: 3.4lh; } }
-.body p + p { margin-top: 0.5em; }
+.meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
+.tag { margin-left: 0.5em; letter-spacing: 0.03em; }
+.body { font-size: 14px; color: #1a1a1a; line-height: 1.75; max-height: 4.8em; overflow: hidden; }
+.body p { margin-bottom: 0.8em; }
+.body p:last-child { margin-bottom: 0; }
 .body.open, [data-nofold] .body { max-height: none; }
-.fold-toggle { position: absolute; left: -1.2em; top: 1.8em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
+.fold-toggle { font-family: 'IBM Plex Mono', monospace; position: absolute; left: -1.2em; top: calc(11px * 1.5 + 0.3rem); cursor: pointer; font-size: 10px; color: #999; user-select: none; }
+.footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
+.footer a { color: #999; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 <div class="header">
 <a class="sig" href="/">hashd.ag</a>
-<div class="header-gap"></div>
 <div class="handles"><a class="handle" href="/kaspa">kaspa</a>&nbsp;&nbsp;<span class="handle active">staghunt</span>&nbsp;&nbsp;<a class="handle" href="/raw">raw</a></div>
 </div>
-<div class="entries-gap"></div>
 
+<div class="footer"><a href="/raw">raw.txt</a></div>
 <script>
 document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
   var el = entry.querySelector('.body');
