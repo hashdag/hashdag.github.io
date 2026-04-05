@@ -38,26 +38,24 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
-    var el = entry.querySelector('.body');
-    if (!el) return;
-    el.classList.add('folded');
-    var g = document.createElement('div');
-    g.className = 'fold-toggle';
-    g.textContent = '+';
-    g.onclick = function(e){
-      e.stopPropagation();
-      if (el.classList.contains('folded')) {
-        el.classList.remove('folded');
-        g.textContent = '−';
-      } else {
-        el.classList.add('folded');
-        g.textContent = '+';
-      }
-    };
-    entry.appendChild(g);
-  });
+document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
+  var el = entry.querySelector('.body');
+  if (!el) return;
+  el.classList.add('folded');
+  var g = document.createElement('div');
+  g.className = 'fold-toggle';
+  g.textContent = '+';
+  g.onclick = function(e){
+    e.stopPropagation();
+    if (el.classList.contains('folded')) {
+      el.classList.remove('folded');
+      g.textContent = '−';
+    } else {
+      el.classList.add('folded');
+      g.textContent = '+';
+    }
+  };
+  entry.appendChild(g);
 });
 </script>
 </body>
