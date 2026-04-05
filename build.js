@@ -14,7 +14,7 @@ function escapeHTML(str) {
     .replace(/"/g, '&quot;');
 }
 
-function renderEntry(e) {
+function renderEntry(e, noFold) {
   const tagSpans = e.tags.length
     ? e.tags.map(t => `<span class="tag">[${escapeHTML(t)}]</span>`).join('')
     : '';
@@ -22,14 +22,15 @@ function renderEntry(e) {
     .split('\n\n')
     .map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`)
     .join('');
-  return `<div class="entry">
+  const noFoldAttr = noFold ? ' data-nofold="1"' : '';
+  return `<div class="entry"${noFoldAttr}>
   <div class="meta">${escapeHTML(e.timestamp)}${tagSpans}</div>
   <div class="body">${paragraphs}</div>
 </div>`;
 }
 
 function buildHTML(entries) {
-  const body = entries.map(renderEntry).join('\n');
+  const body = entries.map((e, i) => renderEntry(e, i < 2)).join('\n');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,24 +42,39 @@ function buildHTML(entries) {
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 11px; }
-body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-.sig { font-size: 11px; color: #1a1a1a; margin-bottom: 1.5rem; display: block; }
-.entry { position: relative; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 0.5px solid #e8e8e8; }
+body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monospace; line-height: 1.7; max-width: 680px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
+.header { margin-bottom: 8px; }
+.sig { font-size: 11px; color: #1a1a1a; display: block; }
+.handles { font-size: 11px; color: #999; text-align: right; }
+.handles a { color: #999; text-decoration: none; }
+.handles a:hover { text-decoration: underline; }
+.header-gap { height: 8px; }
+.entries-gap { height: 0.6rem; }
+.entry { position: relative; margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom: 0.5px solid #e8e8e8; }
 .entry:last-of-type { border-bottom: none; }
-.meta { font-size: 10px; color: #888; margin-bottom: 0.3rem; }
-.tag { margin-left: 0.5em; }
+.meta { font-size: 10px; color: #888; margin-bottom: 0.2rem; }
+.tag { margin-left: 0.6em; font-size: 11px; letter-spacing: 0.02em; }
 .body { font-size: 11px; color: #1a1a1a; line-height: 1.7; }
-.body p + p { margin-top: 0.7em; }
+.body p + p { margin-top: 0.5em; }
 .body.folded { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .fold-toggle { position: absolute; left: -1.2em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
+.footer { margin-top: 0.8rem; font-size: 10px; color: #888; }
+.footer a { color: #888; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="header">
 <span class="sig">hashd.ag</span>
+<div class="header-gap"></div>
+<div class="handles">kaspa&nbsp;&nbsp;staghunt&nbsp;&nbsp;<a href="/raw">raw</a></div>
+</div>
+<div class="entries-gap"></div>
 ${body}
+<div class="footer"><a href="/raw">raw.txt</a></div>
 <script>
 (function(){
-  document.querySelectorAll('.entry').forEach(function(entry){
+  document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
     var body = entry.querySelector('.body');
     if (!body) return;
     var lh = parseFloat(getComputedStyle(body).lineHeight);
