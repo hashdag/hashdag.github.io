@@ -22,9 +22,9 @@ body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-si
 .body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
 .body p { margin-bottom: 0.8em; }
 .body p:last-child { margin-bottom: 0; }
-.body.folded { max-height: 4.8em; overflow: hidden; position: relative; }
-.body.folded::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5em; background: linear-gradient(transparent, #fafaf8); }
-.fold-toggle { font-family: 'IBM Plex Mono', monospace; position: absolute; left: -1.2em; top: calc(11px * 1.5 + 0.3rem); cursor: pointer; font-size: 10px; color: #999; user-select: none; }
+.body.folded { max-height: 5.25rem; overflow: hidden; position: relative; }
+.body.folded::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2rem; background: linear-gradient(transparent, #fafaf8); pointer-events: none; }
+.fold-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; cursor: pointer; user-select: none; display: inline-block; margin-top: 0.2rem; }
 .footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
 .footer a { color: #999; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
@@ -98,10 +98,11 @@ document.addEventListener('DOMContentLoaded', function(){
     var el = entry.querySelector('.body');
     if (!el) return;
     el.classList.add('folded');
-    var g = document.createElement('span');
+    var g = document.createElement('div');
     g.className = 'fold-toggle';
     g.textContent = '+';
-    g.onclick = function(){
+    g.onclick = function(e){
+      e.stopPropagation();
       if (el.classList.contains('folded')) {
         el.classList.remove('folded');
         g.textContent = '−';
