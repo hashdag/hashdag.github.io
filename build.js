@@ -78,10 +78,11 @@ body { background: #fafafa; color: #1a1a1a; font-family: 'IBM Plex Mono', monosp
 .entry:last-of-type { border-bottom: none; }
 .meta { font-size: 10px; color: #888; margin-bottom: 0.2rem; }
 .tag { margin-left: 0.6em; font-size: 11px; letter-spacing: 0.02em; }
-.body { font-size: 11px; color: #1a1a1a; line-height: 1.7; }
+.body { font-size: 11px; color: #1a1a1a; line-height: 1.7; max-height: 4.8em; overflow: hidden; }
+@supports (max-height: 1lh) { .body { max-height: 3.4lh; } }
 .body p + p { margin-top: 0.5em; }
-.body.folded { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.fold-toggle { position: absolute; left: -1.2em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
+.body.open, [data-nofold] .body { max-height: none; }
+.fold-toggle { position: absolute; left: -1.2em; top: 1.8em; cursor: pointer; font-size: 10px; color: #888; font-family: inherit; user-select: none; line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -93,20 +94,16 @@ ${sigHTML}
 <div class="entries-gap"></div>
 ${body}
 <script>
-document.fonts.ready.then(function(){
-  var MAX = 11 * 1.7 * 3; // font-size * line-height * 3 lines = ~56px
-  document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
-    var el = entry.querySelector('.body');
-    if (!el) return;
-    if (el.getBoundingClientRect().height <= MAX + 2) return;
-    el.classList.add('folded');
-    var g = document.createElement('span');
-    g.className = 'fold-toggle';
-    g.textContent = '+';
-    g.style.top = el.offsetTop + 'px';
-    g.onclick = function(){ el.classList.toggle('folded'); g.textContent = el.classList.contains('folded') ? '+' : '\u2212'; };
-    entry.appendChild(g);
-  });
+document.querySelectorAll('.entry:not([data-nofold])').forEach(function(entry){
+  var el = entry.querySelector('.body');
+  var g = document.createElement('span');
+  g.className = 'fold-toggle';
+  g.textContent = '+';
+  g.onclick = function(){
+    el.classList.toggle('open');
+    g.textContent = el.classList.contains('open') ? '\u2212' : '+';
+  };
+  entry.appendChild(g);
 });
 </script>
 </body>
