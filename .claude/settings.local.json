@@ -28,7 +28,23 @@
       "Bash(python:*)",
       "Bash(node:*)",
       "Bash(where gh:*)",
-      "Bash(winget list:*)"
+      "Bash(winget list:*)",
+      "Bash(unzip -l \"files \\(14\\).zip\")",
+      "Bash(unzip -l /c/Users/yonat/myWorkspace/hashd.ag/site/hashdag.zip)",
+      "Bash(unzip -l /c/Users/yonat/myWorkspace/hashd.ag/site/site.zip)",
+      "Bash(unzip -p site/hashdag.zip hashdag/index.html)",
+      "Bash(unzip -p /c/Users/yonat/myWorkspace/hashd.ag/site/hashdag.zip hashdag/index.html)",
+      "Bash(unzip:*)",
+      "Bash(python3 -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python3 -c \"import PyPDF2; print\\('PyPDF2 ok'\\)\")",
+      "Bash(pip install:*)",
+      "Bash(rm \"/c/Users/yonat/myWorkspace/hashd.ag/site/hashdag.zip\")",
+      "Bash(rm \"/c/Users/yonat/myWorkspace/hashd.ag/site/site.zip\")",
+      "Bash(rm \"/c/Users/yonat/myWorkspace/hashd.ag/site/hashdag/files \\(13\\).zip\")",
+      "Bash(rm \"/c/Users/yonat/myWorkspace/hashd.ag/files \\(14\\).zip\")",
+      "Bash(rm \"/c/Users/yonat/myWorkspace/hashd.ag/medium-export-e91fec45700413f8faacc16f77b07f20e570120d2557defaff4762d4a44945bb.zip\")",
+      "Bash(python3 -c ':*)",
+      "Bash(python3:*)"
     ]
   }
 }

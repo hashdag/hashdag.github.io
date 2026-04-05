@@ -262,12 +262,6 @@ End notes:
 [5] The advanced reader should distinguish between the network’s current real observed latency and the network’s current real worst-case latency; see discussion in the DAGKNIGHT paper.
 
 [6] Forcing in-advance bidding is imperative to prevent bid sniping bots, and renders the system MEV-resistance.
-
-By Yonatan Sompolinsky on February 16, 2026.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2025-04-04] [kaspa] [governance] [identity]
 In which we are all faceless until we have faces*
@@ -340,7 +334,7 @@ Consider for instance a scenario where OFAC used the DAO precedent to force the 
 
 Conquest’s second law
 
-Can Ethereum rearrange its social graph? I recollect Conquest’s second law of politics which states that an organization not constitutionally right-wing (or freedom maxi) will inevitably become left-wing (admin/intervention maxi), which should translate in crypto terms to: A project not constitutionally decentralized will inevitably centralize and ossify. In my head, I call this the reverse second law of cryptodynamics. (https://x.com/hashdag/status/1683507762204909568).
+Can Ethereum rearrange its social graph? I recollect Conquest’s second law of politics which states that an organization not constitutionally right-wing (or freedom maxi) will inevitably become left-wing (admin/intervention maxi), which should translate in crypto terms to: A project not constitutionally decentralized will inevitably centralize and ossify. In my head, I call this the reverse second law of cryptodynamics..
 
 Vitalik has historically evaded the question of Ethereum’s “moneyness”. In discussions I had with him in the past he rather dismissed this value proposition, and his public stance too was and still is non-committal. To me, this vague stance suggested not a lack of rigor but a recognition of the elusiveness of money — one can argue money is more of an emergent property of a commodity or asset rather than a defined checklist that an asset must satisfy in order to deserve the money title. Ethereum’s mindset is by and large consistent with <Ethereum is tech; money is a rhetorical device; by adoption of the tech we achieve de facto a behaviour that is indistinguishable from money>:
 
@@ -365,12 +359,6 @@ Trust me, don’t trust me. As promised, it is very difficult to save the ourobo
 *https://www.youtube.com/watch?v=y1SeStQ1g4Y
 
 [1.] I’m not hinting that this is not unrelated to the current maintainers being Canadian and Australian.[2.] For now.
-
-By Yonatan Sompolinsky on April 4, 2025.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2021-05-05] [kaspa] [trust] [sync] [pow]
 In which mayday mayday we are syncing about*
@@ -440,14 +428,6 @@ I’m reminded of the very best ad in the history of ads. Pardon my associative 
 See the ad in the title reference below.
 
 * Title reference
-
-Originally published at https://blocklivenessmatters.com on May 5, 2021.
-
-By Yonatan Sompolinsky on May 5, 2021.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2020-12-28] [kaspa] [pow] [confirmation] [asic]
 In which I have no patience to wait ’til by and by*
@@ -549,14 +529,6 @@ Impatience will also motivate the smart contract layer design I will propose her
 [6] For instance, the bounds given by Satoshi on the attacker’s probability of successfully overriding the longest chain are calculated for an attacker that never abandons his one-shot attack, even if many blocks behind. Such an attacker is clearly not concerned with cost and profit.
 
 [7] Admittedly, transactions removed due to chain reorgs can and in many systems are pushed back to the mempool. However, these transactions are not guaranteed to enter the blockchain in a relevant timeframe, either due to insufficient fees in the post-reorg congestion, or due to users keeping on transacting and innocently double spending previous payments.
-
-Originally published at https://blocklivenessmatters.com on December 28, 2020.
-
-By Yonatan Sompolinsky on December 28, 2020.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2020-12-14] [kaspa] [launch] [mining] [fairness]
 In which I love my truly, truly fair*
@@ -606,14 +578,6 @@ Title reference
 [2] To some extent, the to-be-described mechanism replaces one of the roles of PoW, namely, a slow and organic price-discovery and distribution mechanism. Indeed I argue that in today’s crypto climate PoW can no longer fully serve this role properly, and is instead “just” the best infrastructure for a secure, sovereign cryptocurrency.
 
 [3] Most miners, as it turns out, follow the market and do not lead it. They are not particularly interested in the software and the protocol, which explains why they won’t be a proper target audience for an Initial ASIC Offering.
-
-Originally published at https://blocklivenessmatters.com on December 14, 2020.
-
-By Yonatan Sompolinsky on December 14, 2020.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2020-11-24] [ghost] [kaspa] [pow] [blockdag] [origin]
 In which I run with the GHOSTs of my hometown*
@@ -654,7 +618,6 @@ Title reference
 [1] I did solve the conjecture though, which was really fun and satisfying. It started by first breaking RSA using a hypothetical machine that transmitted waves whose crest points were supposed to coincide with the solutions to the relevant parabolic diophantine equation. It turns out that, for this to work in practice, the size of the machine had to exceed the size of the observable universe, as explained to me by our math professor. He claimed that my solution is equivalent to using an infinite registry, hence trivial. Although he was empathetic and all, I decided to leave the production-ready version for another time.
 [2] Notably, there are efforts to make Bitcoin usable for payments at large scale: the Lightning project. It is an interesting albeit unproven path for scaling, one which is more complex conceptually and UX-wise, which requires more trust (watch towers, etc.), and whose economics and decentralization dynamics are yet unknown.
 [3] By the way, Richard Dawkins’ original statement assumes a very specific ordering of arguments. But if you first poll for the question whether Nature was created or rather created itself into being, most of us would probably take the former stance, despite disagreements about the pseudoidentity of its Creator. If you then run the GHOST protocol on the nodes of statements you will arrive at a different conclusion that the one Dawkins hoped for. So ordering matters.
-Originally published at https://blocklivenessmatters.com on November 24, 2020.
 ---
 [2023-05-03] [kaspa] [asic] [opow] [mining]
 Kaspa where to (Part IV)
@@ -702,12 +665,6 @@ AFAIK optical ASICs will not enter the game in the short-to-mid term, pace depen
 Changes to the current version of kHeavyHash are probably necessary in order to optimize for OPOW, ideally parameter adjustments only, and with reasonable heads up to the mining community. Governance of such changes is TBD, and will depend on whether and how we can avoid centralization on the manufacturing end. This way or another, optical tech initiatives should be first citizens in Kaspa colony, as they are vital for a p2p electronic cash system to scale up while maintaining Satoshi principles, efficient security budget, geographical decentralization, political feasibility.
 
 TLDR; Kaspa operates at the speed-of-light.
-
-By Yonatan Sompolinsky on May 3, 2023.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2022-12-14] [kaspa] [roadmap] [funding]
 Kaspa where to (Part III)
@@ -745,12 +702,6 @@ In the spirit of thanksgiving, I am grateful to all 9k of you for turning Kaspa 
 [1] More accurately, one of us was positive throughout that a possibility is within a hand’s reach, and the other was skeptic and believed an impossibility result was lurking in the dark. Interestingly, the roles reversed with respect to the question whether Kaspa can take off. We swore not to reveal the corresponding identities of the weak in faith, but the reader can be assured that between the two of us the truth always lies.
 
 [2] In Bitcoin, where there’s no pruning of historical data, the gap is even larger, due to initial blockchain download that full nodes go through by default when onboarding.
-
-By Yonatan Sompolinsky on November 26, 2022.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
 ---
 [2022-07-05] [kaspa] [roadmap] [pow]
 Kaspa where to (Part I)
@@ -800,7 +751,6 @@ Next week there will be a hard fork (HF) in order to fix a bug and decrease head
 Will we list the coin on exchanges? There is no “we”, there’s “you”. And I suggest waiting for the community to grow more organically before bringing retail.
 When is it recommended to stress test for utxo throughput? You are free to stress test as you wish. However, note that even if bugs are discovered, some time will pass before the devs can make themselves available to fix them. Therefore, I suppose better wait for the current system to prove itself stable for more than two weeks, say.
 What about block explorer? I believe next week devs will deploy one.
-Feel free to follow me here or on Twitter https://twitter.com/hashdag where I hope to post more Kaspa related material in the coming weeks.
 ---
 [2021-09-22] [kaspa] [launch] [governance]
 Kaspa launch plan (proposal)
@@ -908,9 +858,3 @@ Once the network reaches a meaningful hashrate, one that corresponds to operatio
 Finality parameter
 
 In phase 1, due to the expected low security, the finality parameter of the system should probably be set to be in the order of minutes rather than hours. In case of netsplits, the conflict should be resolved manually, which is a legitimate practice in a non-mainnet platform.
-
-By Yonatan Sompolinsky on September 22, 2021.
-
-Canonical link
-
-Exported from Medium on April 4, 2026.
