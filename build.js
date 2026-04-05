@@ -3,6 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 
+// ── Analytics ──────────────────────────────────────────────────────────────
+// Replace this with your real GA4 Measurement ID (format: G-XXXXXXXXXX)
+const GA4_ID = 'G-XXXXXXXXXX';
+// ───────────────────────────────────────────────────────────────────────────
+
 const ENTRIES_PATH = path.join(__dirname, 'entries.json');
 const OUT_DIR = path.join(__dirname, 'site', 'hashdag');
 
@@ -27,7 +32,7 @@ function renderEntry(e) {
   const isLong = plain.length > 200;
 
   const pdfLink = e.pdf
-    ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}"><strong>pdf</strong></a></div>`
+    ? `\n  <div class="meta pdf-link"><a href="/${escapeHTML(e.pdf)}" target="_blank" rel="noopener" data-track="pdf"><strong>pdf</strong></a></div>`
     : '';
 
   if (!isLong) {
@@ -85,6 +90,23 @@ function buildHTML(entries, active) {
   const title = active ? `hashd.ag / ${active}` : 'hashd.ag';
   const body = entries.map(e => renderEntry(e)).join('\n');
 
+  const ga4 = GA4_ID === 'G-XXXXXXXXXX' ? '' : `
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','${GA4_ID}');
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[data-track],a.handle,span.tag');
+  if(!a)return;
+  var type=a.dataset.track||( a.classList.contains('handle')?'handle': a.classList.contains('tag')?'tag':null);
+  if(!type)return;
+  gtag('event','click',{event_category:type,event_label:a.textContent.trim()||a.href});
+});
+</script>`;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +114,7 @@ function buildHTML(entries, active) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">${ga4}
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-size: 14px; line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
@@ -129,7 +151,7 @@ ${sigHTML}
 <div class="handles">${handlesHTML}</div>
 </div>
 ${body}
-${active ? '' : '<div class="footer"><a href="/raw">raw.txt</a></div>'}
+${active ? '' : '<div class="footer"><a href="/raw" data-track="raw">raw.txt</a></div>'}
 </body>
 </html>
 `;
