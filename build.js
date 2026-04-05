@@ -7,8 +7,8 @@ const ENTRIES_PATH = path.join(__dirname, 'entries.json');
 const OUT_DIR = path.join(__dirname, 'site', 'hashdag');
 
 const FILTERS = {
-  kaspa:    e => e.tags.includes('kaspa'),
-  staghunt: e => e.tags.some(t => ['staghunt','stag-hunt','coordination-markets','koko'].includes(t)),
+  kaspa:    e => e.tags.some(t => ['kaspa','koko'].includes(t)),
+  staghunt: e => e.tags.some(t => ['staghunt','stag-hunt','coordination-markets'].includes(t)),
 };
 
 function escapeHTML(str) {
