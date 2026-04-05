@@ -52,7 +52,7 @@ function buildHTML(entries, active) {
   ].join('&nbsp;&nbsp;');
 
   const title = active ? `hashd.ag / ${active}` : 'hashd.ag';
-  const body = entries.map((e, i) => renderEntry(e, !active && i < 2)).join('\n');
+  const body = entries.map((e, i) => renderEntry(e, i < 2)).join('\n');
 
   return `<!DOCTYPE html>
 <html lang="en">
