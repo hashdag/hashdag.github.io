@@ -45,9 +45,11 @@ function buildHTML(entries, active) {
     return `<a class="handle" href="/${name}">${label}</a>`;
   }
 
-  const handleParts = [handle('kaspa', 'kaspa'), handle('staghunt', 'staghunt')];
-  if (!active) handleParts.push(`<a class="handle" href="/raw">raw</a>`);
-  const handlesHTML = handleParts.join('&nbsp;&nbsp;');
+  const handlesHTML = [
+    handle('kaspa', 'kaspa'),
+    handle('staghunt', 'staghunt'),
+    `<a class="handle" href="/raw">raw</a>`,
+  ].join('&nbsp;&nbsp;');
 
   const title = active ? `hashd.ag / ${active}` : 'hashd.ag';
   const body = entries.map((e, i) => renderEntry(e, i < 2)).join('\n');
