@@ -3,7 +3,7 @@
 | 100 | 2026-04-01 | staghunt, coordination-markets, RTD | Project Staghunt  A Six Pager on Coordination Markets  1. Az… |
 | 100 | 2026-03-01 | staghunt, coordination-markets, internet | Oxford Union Address  March 2026  SECTION ONE - THE INTERNET… |
 | 7 | 2026-02-16 | kaspa, RTD, narrative | In which it was never my choice to hold the fire we found*… |
-| 7 | 2025-06-01 | poem, philosophy | Borges and I / Jorge Luis Borges  The other one, the one cal… |
+| 7 | 2025-06-01 | poem, philosophy, fragments | Borges and I / Jorge Luis Borges  The other one, the one cal… |
 | 7 | 2025-04-04 | kaspa, governance, identity | In which we are all faceless until we have faces*  I am the… |
 | 7 | 2021-05-05 | kaspa, trust, sync, pow | In which mayday mayday we are syncing about*  Don’t trust, t… |
 | 7 | 2020-12-28 | kaspa, pow, confirmation, asic | In which I have no patience to wait ’til by and by*  A perso… |
@@ -17,3 +17,6 @@
 | 2 | 2021-11-23 | kaspa, network, incident | Kaspa (Black Tuesday)  This post assumes reader context on t… |
 | 2 | 2021-11-18 | kaspa, launch, governance | Kaspa launch plan (responding to reality)  First and foremos… |
 | 2 | 2021-09-22 | kaspa, launch, governance | Kaspa launch plan (proposal)  tldr  launch Kaspa in gamenet… |
+| 0 | 2025-06-15 | dacc, philosophy, universalism, fragments | I find it hard to marry d/acc with universalism. If you read… |
+| 0 | 2025-06-10 | somewheres, philosophy, fragments | Cyrus and other kings of Persia were Somewheres-friendly, di… |
+| 0 | 2025-05-15 | crypto-culture, trustlessness, bitcoin, kaspa, fragments | The deflated morale of crypto is the natural course of hardc… |

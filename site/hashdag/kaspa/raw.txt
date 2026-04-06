@@ -858,3 +858,18 @@ Once the network reaches a meaningful hashrate, one that corresponds to operatio
 Finality parameter
 
 In phase 1, due to the expected low security, the finality parameter of the system should probably be set to be in the order of minutes rather than hours. In case of netsplits, the conflict should be resolved manually, which is a legitimate practice in a non-mainnet platform.
+---
+[2025-05-15] [crypto-culture] [trustlessness] [bitcoin] [kaspa] [fragments]
+The deflated morale of crypto is the natural course of hardcore revolutions. Cryptoanarchism is exciting and all, but it takes socially embedded 'protestant' dudes to translate it into something meaningful to civilization.
+
+Putting trustlessness on a pedestal is wrong. 'Civilization is the scale of trust', and we shouldn't conflate the strong conviction that the TCP/IP rails of society must be trustless and singlepointoffailure-free with a trust-hostile culture. Greg Maxwell on the bitcoin mailing list bringing nuance into the trustless shibboleth really influenced me.
+
+Bitcoin toxic culture more than anything screams 'trustless trustless on every layer', treating common normie sense and judgment as muggle midwit. You end up getting married to the worst chronic normie institutions a la MSTR.
+
+This lack of cultural depth highly limits bitcoin's ability to be meaningful to non-abstract civilization. And the pessimistic sentiment shades over vibrant cypherpunk-principled projects like zcash and kaspa. Zcash's recent success should be ascribed to it being pushed by people with backbone-cypherpunk convictions but otherwise far from anarchist-flat absolutists.
+
+Crypto's next manifesto must be legible to normies. We've 'earned' turning normies from a derogatory term into a sanity check on our revolution. And to really land it needs to open also political and social avenues for permissionless rails.
+
+Bitcoin has at least 20 more years before it's dead, but that's not a long time on civilizational scales, and we need to make sure crypto outgrows its v1 sooner rather than later.
+
+*Gregory Maxwell: Not that justified trust is a bad thing, but trust makes systems brittle, opaque, and costly to operate. Trust failures result in systemic collapses, trust curation creates inequality and monopoly lock-in, and naturally arising trust choke-points can be abused to deny access to due process. Through the use of cryptographic proof and decentralized networks Bitcoin minimizes and replaces these trust costs.

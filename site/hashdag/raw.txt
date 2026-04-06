@@ -574,7 +574,7 @@ End notes:
 
 [6] Forcing in-advance bidding is imperative to prevent bid sniping bots, and renders the system MEV-resistance.
 ---
-[2025-06-01] [poem] [philosophy]
+[2025-06-01] [poem] [philosophy] [fragments]
 Borges and I / Jorge Luis Borges
 
 The other one, the one called Borges, is the one things happen to.
@@ -1277,3 +1277,30 @@ Once the network reaches a meaningful hashrate, one that corresponds to operatio
 Finality parameter
 
 In phase 1, due to the expected low security, the finality parameter of the system should probably be set to be in the order of minutes rather than hours. In case of netsplits, the conflict should be resolved manually, which is a legitimate practice in a non-mainnet platform.
+---
+[2025-06-15] [dacc] [philosophy] [universalism] [fragments]
+I find it hard to marry d/acc with universalism. If you read Vitalik's original blogpost it's almost explicitly a manifesto for the privileged -- peoples fortunate to be born into swiss-like conditions, with mountain terrains that let you stay defense focused.
+
+This approach starts and ends in the privileged in-group, and the out-group needs to get their hands dirty with more aggressive methods to promote freedom -- and they gotta do it alone, because the dacc swiss societies aren't too prepared or oriented to help them. It smells more elitist than universal. Sanctimony Tech.
+
+It's then almost impossible for daccs to recognize let alone celebrate a globally emancipating event that was achieved through anti-dacc means. Freedom expands but 'the world got darker.'
+---
+[2025-06-10] [somewheres] [philosophy] [fragments]
+Cyrus and other kings of Persia were Somewheres-friendly, didn't believe in human-enforced universalistic world order. And they were quite proactive about it, e.g. Artaxerxes I donating gold and silver to help restore the Israeli temple.
+
+There's some sense of unease and suspicion of cosmopolitan liberals when noticing the kinship between Iranians and Israelis. Fundamentally Anywheres can't process Somewheres forming deep bonds with other distinct Somewheres.
+---
+[2025-05-15] [crypto-culture] [trustlessness] [bitcoin] [kaspa] [fragments]
+The deflated morale of crypto is the natural course of hardcore revolutions. Cryptoanarchism is exciting and all, but it takes socially embedded 'protestant' dudes to translate it into something meaningful to civilization.
+
+Putting trustlessness on a pedestal is wrong. 'Civilization is the scale of trust', and we shouldn't conflate the strong conviction that the TCP/IP rails of society must be trustless and singlepointoffailure-free with a trust-hostile culture. Greg Maxwell on the bitcoin mailing list bringing nuance into the trustless shibboleth really influenced me.
+
+Bitcoin toxic culture more than anything screams 'trustless trustless on every layer', treating common normie sense and judgment as muggle midwit. You end up getting married to the worst chronic normie institutions a la MSTR.
+
+This lack of cultural depth highly limits bitcoin's ability to be meaningful to non-abstract civilization. And the pessimistic sentiment shades over vibrant cypherpunk-principled projects like zcash and kaspa. Zcash's recent success should be ascribed to it being pushed by people with backbone-cypherpunk convictions but otherwise far from anarchist-flat absolutists.
+
+Crypto's next manifesto must be legible to normies. We've 'earned' turning normies from a derogatory term into a sanity check on our revolution. And to really land it needs to open also political and social avenues for permissionless rails.
+
+Bitcoin has at least 20 more years before it's dead, but that's not a long time on civilizational scales, and we need to make sure crypto outgrows its v1 sooner rather than later.
+
+*Gregory Maxwell: Not that justified trust is a bad thing, but trust makes systems brittle, opaque, and costly to operate. Trust failures result in systemic collapses, trust curation creates inequality and monopoly lock-in, and naturally arising trust choke-points can be abused to deny access to due process. Through the use of cryptographic proof and decentralized networks Bitcoin minimizes and replaces these trust costs.

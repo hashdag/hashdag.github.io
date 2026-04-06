@@ -12,8 +12,9 @@ const ENTRIES_PATH = path.join(__dirname, 'entries.json');
 const OUT_DIR = path.join(__dirname, 'site', 'hashdag');
 
 const FILTERS = {
-  kaspa:    e => e.tags.some(t => ['kaspa','koko'].includes(t)),
-  staghunt: e => e.tags.some(t => ['staghunt','stag-hunt','coordination-markets'].includes(t)),
+  kaspa:     e => e.tags.some(t => ['kaspa','koko'].includes(t)),
+  staghunt:  e => e.tags.some(t => ['staghunt','stag-hunt','coordination-markets'].includes(t)),
+  fragments: e => e.tags.includes('fragments'),
 };
 
 function escapeHTML(str) {
@@ -84,6 +85,7 @@ function buildHTML(entries, active) {
   const handlesHTML = [
     handle('kaspa', 'kaspa'),
     handle('staghunt', 'staghunt'),
+    handle('fragments', 'fragments'),
     `<a class="handle" href="/raw">raw</a>`,
   ].join('&nbsp;&nbsp;');
 

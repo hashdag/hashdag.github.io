@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hashd.ag / fragments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4JZ6541HM9"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-4JZ6541HM9');
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[data-track],a.handle,span.tag');
+  if(!a)return;
+  var type=a.dataset.track||( a.classList.contains('handle')?'handle': a.classList.contains('tag')?'tag':null);
+  if(!type)return;
+  gtag('event','click',{event_category:type,event_label:a.textContent.trim()||a.href});
+});
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fafaf8; color: #1a1a1a; font-family: Georgia, serif; font-size: 14px; line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 20px 1.5rem 4rem; }
+.header { margin-bottom: 12px; }
+.sig { font-family: Georgia, serif; font-size: 14px; color: #1a1a1a; display: block; text-decoration: none; }
+.handles { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; text-align: right; margin-top: 8px; }
+.handle { color: #999; text-decoration: none; }
+.handle:hover { text-decoration: underline; }
+.handle.active { color: #1a1a1a; }
+.entry { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #e8e8e8; }
+.entry:last-of-type { border-bottom: none; }
+.meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-bottom: 0.3rem; line-height: 1.5; }
+.tag { margin-left: 0.5em; letter-spacing: 0.03em; }
+.pdf-link { margin-bottom: 0.3rem; }
+.pdf-link a { color: #1a1a1a; text-decoration: none; }
+.pdf-link a:hover { text-decoration: underline; }
+details { margin: 0; }
+summary { font-size: 14px; color: #1a1a1a; line-height: 1.75; font-family: Georgia, serif; cursor: pointer; }
+.title-line { display: none; }
+details[open] .preview { display: none; }
+details[open] .title-line { display: inline; }
+details .body { margin-top: 0.5em; }
+.body { font-size: 14px; color: #1a1a1a; line-height: 1.75; }
+.body p { margin-bottom: 0.8em; }
+.body p:last-child { margin-bottom: 0; }
+.footer { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #999; margin-top: 1.2rem; }
+.footer a { color: #999; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="header">
+<a class="sig" href="/">hashd.ag</a>
+<div class="handles"><a class="handle" href="/kaspa">kaspa</a>&nbsp;&nbsp;<a class="handle" href="/staghunt">staghunt</a>&nbsp;&nbsp;<span class="handle active">fragments</span>&nbsp;&nbsp;<a class="handle" href="/raw">raw</a></div>
+</div>
+<div class="entry">
+  <div class="meta">2025-06-01<span class="tag">[poem]</span><span class="tag">[philosophy]</span><span class="tag">[fragments]</span></div>
+  <details>
+    <summary><span class="preview">Borges and I / Jorge Luis Borges / The other one, the one called Borges, is the one things happen to. / I walk through the streets of Buenos Aires and stop for a moment, perhaps mechanically now, to l…</span><span class="title-line">Borges and I / Jorge Luis Borges</span></summary>
+    <div class="body"><p>The other one, the one called Borges, is the one things happen to.</p><p>I walk through the streets of Buenos Aires and stop for a moment, perhaps mechanically now, to look at the arch of an entrance hall and the grillwork on the gate; I know of Borges from the mail and see his name on a list of professors or in a biographical dictionary.</p><p>I like hourglasses, maps, eighteenth-century typography, the taste of coffee and the prose of Stevenson; he shares these preferences, but in a vain way that turns them into the attributes of an actor.</p><p>It would be an exaggeration to say that ours is a hostile relationship; I live, let myself go on living, so that Borges may contrive his literature, and this literature justifies me.</p><p>It is no effort for me to confess that he has achieved some valid pages, but those pages cannot save me, perhaps because what is good belongs to no one, not even to him, but rather to the language and to tradition.</p><p>Besides, I am destined to perish, definitively, and only some instant of myself can survive in him. Little by little, I am giving over everything to him, though I am quite aware of his perverse custom of falsifying and magnifying things.</p><p>Spinoza knew that all things long to persist in their being; the stone eternally wants to be a stone and the tiger a tiger.</p><p>I shall remain in Borges, not in myself (if it is true that I am someone), but I recognize myself less in his books than in many others or in the laborious strumming of a guitar.</p><p>Years ago I tried to free myself from him and went from the mythologies of the suburbs to the games with time and infinity, but those games belong to Borges now and I shall have to imagine other things.</p><p>Thus my life is a flight and I lose everything and everything belongs to oblivion, or to him.</p><p>I do not know which of us has written this page.</p></div>
+  </details>
+</div>
+<div class="entry">
+  <div class="meta">2025-06-15<span class="tag">[dacc]</span><span class="tag">[philosophy]</span><span class="tag">[universalism]</span><span class="tag">[fragments]</span></div>
+  <details>
+    <summary><span class="preview">I find it hard to marry d/acc with universalism. If you read Vitalik's original blogpost it's almost explicitly a manifesto for the privileged -- peoples fortunate to be born into swiss-like condition…</span><span class="title-line">I find it hard to marry d/acc with universalism. If you read Vitalik's original blogpost it's almost explicitly a manifesto for the privileged -- peoples fortunate to be born into swiss-like conditions, with mountain terrains that let you stay defense focused.</span></summary>
+    <div class="body"><p>This approach starts and ends in the privileged in-group, and the out-group needs to get their hands dirty with more aggressive methods to promote freedom -- and they gotta do it alone, because the dacc swiss societies aren't too prepared or oriented to help them. It smells more elitist than universal. Sanctimony Tech.</p><p>It's then almost impossible for daccs to recognize let alone celebrate a globally emancipating event that was achieved through anti-dacc means. Freedom expands but 'the world got darker.'</p></div>
+  </details>
+</div>
+<div class="entry">
+  <div class="meta">2025-06-10<span class="tag">[somewheres]</span><span class="tag">[philosophy]</span><span class="tag">[fragments]</span></div>
+  <details>
+    <summary><span class="preview">Cyrus and other kings of Persia were Somewheres-friendly, didn't believe in human-enforced universalistic world order. And they were quite proactive about it, e.g. Artaxerxes I donating gold and silve…</span><span class="title-line">Cyrus and other kings of Persia were Somewheres-friendly, didn't believe in human-enforced universalistic world order. And they were quite proactive about it, e.g. Artaxerxes I donating gold and silver to help restore the Israeli temple.</span></summary>
+    <div class="body"><p>There's some sense of unease and suspicion of cosmopolitan liberals when noticing the kinship between Iranians and Israelis. Fundamentally Anywheres can't process Somewheres forming deep bonds with other distinct Somewheres.</p></div>
+  </details>
+</div>
+<div class="entry">
+  <div class="meta">2025-05-15<span class="tag">[crypto-culture]</span><span class="tag">[trustlessness]</span><span class="tag">[bitcoin]</span><span class="tag">[kaspa]</span><span class="tag">[fragments]</span></div>
+  <details>
+    <summary><span class="preview">The deflated morale of crypto is the natural course of hardcore revolutions. Cryptoanarchism is exciting and all, but it takes socially embedded 'protestant' dudes to translate it into something meani…</span><span class="title-line">The deflated morale of crypto is the natural course of hardcore revolutions. Cryptoanarchism is exciting and all, but it takes socially embedded 'protestant' dudes to translate it into something meaningful to civilization.</span></summary>
+    <div class="body"><p>Putting trustlessness on a pedestal is wrong. 'Civilization is the scale of trust', and we shouldn't conflate the strong conviction that the TCP/IP rails of society must be trustless and singlepointoffailure-free with a trust-hostile culture. Greg Maxwell on the bitcoin mailing list bringing nuance into the trustless shibboleth really influenced me.</p><p>Bitcoin toxic culture more than anything screams 'trustless trustless on every layer', treating common normie sense and judgment as muggle midwit. You end up getting married to the worst chronic normie institutions a la MSTR.</p><p>This lack of cultural depth highly limits bitcoin's ability to be meaningful to non-abstract civilization. And the pessimistic sentiment shades over vibrant cypherpunk-principled projects like zcash and kaspa. Zcash's recent success should be ascribed to it being pushed by people with backbone-cypherpunk convictions but otherwise far from anarchist-flat absolutists.</p><p>Crypto's next manifesto must be legible to normies. We've 'earned' turning normies from a derogatory term into a sanity check on our revolution. And to really land it needs to open also political and social avenues for permissionless rails.</p><p>Bitcoin has at least 20 more years before it's dead, but that's not a long time on civilizational scales, and we need to make sure crypto outgrows its v1 sooner rather than later.</p><p>*Gregory Maxwell: Not that justified trust is a bad thing, but trust makes systems brittle, opaque, and costly to operate. Trust failures result in systemic collapses, trust curation creates inequality and monopoly lock-in, and naturally arising trust choke-points can be abused to deny access to due process. Through the use of cryptographic proof and decentralized networks Bitcoin minimizes and replaces these trust costs.</p></div>
+  </details>
+</div>
+
+</body>
+</html>
